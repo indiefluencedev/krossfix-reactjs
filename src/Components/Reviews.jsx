@@ -135,39 +135,42 @@ const TestimonialsCarousel = () => {
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
     >
-      <div className='xl:w-full md:w-full mx-auto xs:mt-[50px] md:mt-[100px] xl:mt-[100px]'>
-        <h2 className='text-[24px] md:text-[32px] xs:mb-3 xs:mt-5 md:mb-8 text-prime font-bold xs:text-center md:text-center text-center '>
-          Reviews
-        </h2>
-        <Slider {...settings} className="slider-with-margin">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              className={`py-5`}
-              style={{ transition: 'transform 0.5s' }}
-            >
-              <div className="relative bg-white shadow-lg rounded-md overflow-hidden mt-8 p-4" style={{ height: '400px', maxWidth: '300px', margin: '0 auto', marginBottom: '10px', borderRadius: '10px', boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)' }}>
-                <div className="text-orange-500 text-4xl mb-2 text-center">
-                  <FaQuoteLeft />
+      {/* Added container with a fixed width of 1240px */}
+      <div className='container mx-auto' style={{ maxWidth: '1240px' }}>
+        <div className='w-full mx-auto xs:mt-[50px] md:mt-[100px] xl:mt-[100px]'>
+          <h2 className='text-[24px] md:text-[32px] xs:mb-3 xs:mt-5 md:mb-8 text-prime font-bold xs:text-center md:text-center text-center mt-10 '>
+            Reviews
+          </h2>
+          <Slider {...settings} className="slider-with-margin">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className={`py-5`}
+                style={{ transition: 'transform 0.5s' }}
+              >
+                <div className="relative bg-white shadow-lg rounded-md overflow-hidden mt-8 p-4" style={{ height: '400px', maxWidth: '300px', margin: '0 auto', marginBottom: '10px', borderRadius: '10px', boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)' }}>
+                  <div className="text-orange-500 text-4xl mb-2 text-center">
+                    <FaQuoteLeft />
+                  </div>
+                  <div className="p-2 text-center">
+                    <p className="text-gray-600 text-[12px] overflow-hidden" style={{ maxHeight: '130px' }}>{testimonial.text}</p>
+                  </div>
+                  <LazyLoad height={100} offset={100} once>
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-[90.77px] h-[90.77px] object-cover rounded-full mx-auto mb-2"
+                    />
+                  </LazyLoad>
+                  <div className="p-2 text-center">
+                    <h3 className="text-[13.15px] font-semibold mt-2">{testimonial.name}</h3>
+                    <p className="text-[13.15px] text-orange-500">{testimonial.company}</p>
+                  </div>
                 </div>
-                <div className="p-2 text-center">
-                  <p className="text-gray-600 text-[12px] overflow-hidden" style={{ maxHeight: '130px' }}>{testimonial.text}</p>
-                </div>
-                <LazyLoad height={100} offset={100} once>
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-[90.77px] h-[90.77px] object-cover rounded-full mx-auto mb-2"
-                  />
-                </LazyLoad>
-                <div className="p-2 text-center">
-                  <h3 className="text-[13.15px] font-semibold mt-2">{testimonial.name}</h3>
-                  <p className="text-[13.15px] text-orange-500">{testimonial.company}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </Slider>
+              </motion.div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </motion.div>
   );
