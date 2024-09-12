@@ -5,6 +5,8 @@ import HomeAbout from '../Components/HomeAbout';
 import HomeProducts from '../Components/HomeProducts';
 import MobileHomeProducts from '../Components/MobileHomeProducts';
 import Gallery from '../Components/Gallery';
+import Reviews from '../Components/Reviews';
+import HomeFooter from '../Components/HomeFooter';
 
 const HomePage = () => {
   const [isMobile, setIsMobile] = useState(null); // Use null initially to avoid premature rendering
@@ -44,6 +46,8 @@ const HomePage = () => {
       {/* Conditionally render MobileHomeProducts or HomeProducts */}
       {isMobile ? <MobileHomeProducts /> : <HomeProducts />}
       <Gallery />
+      <Reviews /> 
+      <HomeFooter/>
     </div>
   );
 };

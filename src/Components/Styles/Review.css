@@ -1,0 +1,15 @@
+.current-slide {
+    /* No scaling or opacity changes */
+}
+
+.other-slide {
+    /* No scaling or opacity changes */
+}
+
+.slider-with-margin {
+    height: 500px;
+}
+
+.slick-dots {
+    margin-top: 10px !important; /* Reduced margin from the top */
+}
