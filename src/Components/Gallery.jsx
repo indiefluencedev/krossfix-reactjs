@@ -33,6 +33,8 @@ const Gallery = () => {
         <div className="grid-item item12"><img src={image3} alt="item" /></div>
         <div className="grid-item item12"><img src={image7} alt="item" /></div>
         <div className="grid-item item12"><img src={image1} alt="item" /></div>
+        <div className="grid-item item12"><img src={image2} alt="item" /></div>
+        <div className="grid-item item12"><img src={image8} alt="item" /></div>
       </div>
     </div>
   );

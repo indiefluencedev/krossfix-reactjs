@@ -97,6 +97,11 @@ const TestimonialsCarousel = () => {
         },
       },
     ],
+    appendDots: dots => (
+      <div style={{ marginBottom: '50px' }}> {/* Adding margin at the bottom for the dots */}
+        <ul> {dots} </ul>
+      </div>
+    ),
   };
 
   useEffect(() => {

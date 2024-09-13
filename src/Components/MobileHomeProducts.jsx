@@ -17,6 +17,7 @@ const swipePower = (offset, velocity) => {
 
 const MobileHomeProducts = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // Function to handle swipe
   const handleSwipe = (newDirection) => {
@@ -29,9 +30,23 @@ const MobileHomeProducts = () => {
     });
   };
 
+  // Adding event listener for window resize to get the current width
+  React.useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Conditional Framer Motion animation only for 480px screen width
+  const animationProps = windowWidth <= 480 ? {
+    initial: { opacity: 0, x: 100 },
+    animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+    exit: { opacity: 0, x: -100, transition: { duration: 0.5 } },
+  } : {};
+
   return (
     <div className="carousel-container" style={containerStyle}>
-      <h2 style={headingStyle}>Our Products</h2> {/* Added heading */}
+      <h2 style={headingStyle}>Our Products</h2>
       <div className="carousel" style={carouselStyle}>
         <motion.div
           className="card"
@@ -48,6 +63,7 @@ const MobileHomeProducts = () => {
               handleSwipe(-1); // Swipe right
             }
           }}
+          {...animationProps} // Apply animation props conditionally for 480px
         >
           <img src={homeproducts} alt="product" style={imageStyle} />
           <div style={purpleBoxStyle}>
@@ -76,15 +92,15 @@ const MobileHomeProducts = () => {
   );
 };
 
-// Inline styles for the container, carousel, and elements
+// Inline styles for the container, carousel, and elements (same design as before)
 const containerStyle = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'flex-start',
   width: '100%',
-  height: '100vh',
-  padding: '10px 0', // Reduced padding for the container
+  height: '500px',
+  padding: '10px 0', // Adjusted padding
 };
 
 const headingStyle = {
@@ -108,12 +124,11 @@ const cardStyle = {
   height: '450px', // Adjust height to remove extra white space
   overflow: 'hidden',
   backgroundColor: '#fff',
-  // boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
 };
 
 const imageStyle = {
   width: '100%',
-  height: '70%', // Increased the height to take up more space
+  height: '70%', // Adjusted height to fit the image well
   objectFit: 'cover',
 };
 

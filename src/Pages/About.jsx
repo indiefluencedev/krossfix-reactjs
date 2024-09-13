@@ -1,11 +1,21 @@
 import React from 'react';
+import AboutHero from '../Components/Aboutcomponents/AboutHero';
+import AboutUs from '../Components/Aboutcomponents/AboutUs';
+import OurValues from '../Components/Aboutcomponents/OurValues';
+import History from '../Components/Aboutcomponents/History';
+import OurTeam from '../Components/Aboutcomponents/OurTeam';
 
 const About = () => {
-  return (
-    <div className="text-center pt-28">
-      <h1 className="text-3xl font-bold">About Us</h1>
-    </div>
-  );
+ return (
+  <div>
+    <AboutHero />
+    <AboutUs />
+    <OurValues />
+    <History />
+    <OurTeam />
+ 
+  </div>
+ )
 };
 
 export default About;

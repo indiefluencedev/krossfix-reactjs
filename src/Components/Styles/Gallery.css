@@ -1,137 +1,121 @@
 /* Gallery Heading */
 .gallery-heading {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Grid Container with custom scrollbar */
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Grid Container with custom scrollbar */
+.grid-container {
+  width: 100%;
+  max-width: 1240px; /* Restricts container width */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns for larger screens */
+  grid-gap: 10px; /* Consistent 10px gap between all grid items */
+  padding: 10px;
+  max-height: 700px; /* Restricting container height */
+  overflow-y: auto; /* Scroll if content exceeds container height */
+  overflow-x: hidden;
+}
+
+/* Grid Item Styling */
+.grid-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Adjust the image size for some items */
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Set different sizes for specific grid items */
+/* Larger Images */
+.grid-item.item1 {
+  grid-column: span 2; /* Takes up 2 columns */
+  grid-row: span 2;    /* Takes up 2 rows */
+}
+
+.grid-item.item10 {
+  grid-column: span 2; /* Takes up 2 columns */
+  grid-row: span 2;    /* Takes up 2 rows */
+}
+
+/* Smaller Images */
+.grid-item.item2 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.grid-item.item3 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.grid-item.item4 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.grid-item.item5 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Medium-sized Images */
+.grid-item.item6 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.grid-item.item7 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.grid-item.item8 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.grid-item.item9 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.grid-item.item11 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.grid-item.item12 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
   .grid-container {
-    width: 100%; /* Full width for mobile responsiveness */
-    max-width: 1024px; /* Restricts container width to 1024px on larger screens */
-    margin: 0 auto; /* Centers the container */
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 equal columns for larger screens */
-    grid-gap: 10px; /* Consistent 10px gap between all grid items */
-    padding: 10px;
-    max-height: 700px; /* Restricting container height */
-    overflow-y: auto; /* Scroll if content exceeds container height */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-  }
-  
-  /* Custom Scrollbar Styling */
-  .grid-container::-webkit-scrollbar {
-    width: 7px; /* Width of the scrollbar */
-  }
-  
-  .grid-container::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color of the scrollbar thumb */
-    border-radius: 6px; /* Round the corners of the scrollbar thumb */
-  }
-  
-  .grid-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Color of the scrollbar thumb on hover */
-  }
-  
-  .grid-container::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Background color of the scrollbar track */
-    border-radius: 6px; /* Round the corners of the scrollbar track */
-  }
-  
-  /* Grid Item Styling */
-  .grid-item {
-    position: relative;
-    display: flex; /* Ensure that images scale properly */
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  /* Set different sizes for specific grid items */
-  .grid-item.item1 {
-    grid-column: span 2; /* Takes up 2 columns */
-    grid-row: span 2;    /* Takes up 2 rows */
-  }
-  
-  .grid-item.item2 {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-  
-  .grid-item.item3 {
-    grid-column: span 1;
-    grid-row: span 2;
-  }
-  
-  .grid-item.item4 {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-  
-  .grid-item.item5 {
-    grid-column: span 1;
-    grid-row: span 2;
-  }
-  
-  .grid-item.item6 {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  
-  .grid-item.item7 {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-  
-  .grid-item.item8 {
-    grid-column: span 1;
-    grid-row: span 2;
-  }
-  
-  .grid-item.item9 {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  
-  .grid-item.item10 {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-  
-  .grid-item.item11 {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  
-  .grid-item.item12 {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  
-  /* Responsive adjustments */
-  @media screen and (max-width: 768px) {
-    .grid-container {
       grid-template-columns: repeat(2, 1fr); /* Adjusts to 2 columns on tablets */
-    }
   }
-  
-  @media screen and (max-width: 480px) {
-    .grid-container {
-      grid-template-columns: 1fr; /* Single column on very small screens */
-    }
-  }
-  
-  /* Ensure that the grid remains scrollable on small screens */
+}
+
+@media screen and (max-width: 480px) {
   .grid-container {
-    -webkit-overflow-scrolling: touch; /* Adds momentum scrolling for iOS devices */
+      grid-template-columns: 1fr; /* Single column on very small screens */
   }
-  
+}
+
+/* Ensure that the grid remains scrollable on small screens */
+.grid-container {
+  -webkit-overflow-scrolling: touch; /* Adds momentum scrolling for iOS devices */
+}
