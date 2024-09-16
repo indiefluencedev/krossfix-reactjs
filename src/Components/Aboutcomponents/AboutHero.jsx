@@ -8,7 +8,7 @@ const AboutHero = () => {
       style={{ backgroundImage: `url(${abouthero})` }}>
       <div className="absolute inset-0 bg-black opacity-30"></div>
       <div className="relative z-10 flex justify-center items-center h-full">
-        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mt-10 sm:mt-16 md:mt-20">
+        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mt-20 sm:mt-16 md:mt-20">
           About
         </h1>
       </div>
