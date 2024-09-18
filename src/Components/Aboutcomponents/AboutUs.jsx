@@ -3,18 +3,20 @@ import aboutus from '../../assets/AboutHeroimages/aboutus.png'; // Ensure the co
 
 const AboutUs = () => {
   return (
-    <div className="container mx-auto max-w-screen-xl px-4 py-10 sm:py-16">
+    <div className="w-full max-w-screen-xl mx-auto px-4 py-10 sm:py-16 relative z-10">
       <div className="flex flex-col md:flex-row items-center">
         {/* Left Side - Text */}
         <div className="w-full md:w-1/2 md:pr-8">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 text-center md:text-left">
+          {/* <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-black text-center md:text-left relative z-20">
             About Us
-          </h1>
+          </h1> */}
+
+          <h2 className='text-3xl sm:text-4xl font-bold mb-6 text-gray-900 text-center md:text-left relative z-20'>About Us</h2>
           <p className="text-base sm:text-lg text-gray-700 mb-4 text-center md:text-left">
-            We are a technology-driven organization with a team of highly qualified and committed individuals.
+           We are a technology-driven organization with a team of highly qualified and committed individuals.
           </p>
           <p className="text-base sm:text-lg text-gray-700 mb-4 text-center md:text-left">
-            Each function is driven by competent and experienced staff to ensure effective implementation of the vision and mission of the organization in each of their areas of operations.
+            Each function is driven by competent and experienced staff to ensure effective implementation of the vision and mission of the organization in each of their areas of operations. 
           </p>
           <p className="text-base sm:text-lg text-gray-700 text-center md:text-left">
             We are constantly developing our teams with the addition of industry veterans to accelerate the speed of development.

@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+      <div className="w-full max-w-screen-xl mx-auto flex items-center justify-between py-4 px-6">
         
         {/* Logo */}
         <div>
@@ -135,16 +135,6 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-
-            {/* <div className="py-2 w-full">
-              <button
-                onClick={handleDropdownToggle}
-                className="flex justify-between items-center text-black hover:text-orange-500 w-full text-lg border-b border-gray-300 pb-2"
-              >
-                Utilities
-                <FaChevronDown className="ml-2 text-sm" />
-              </button>
-            </div> */}
 
             <Link
               to="/contact"

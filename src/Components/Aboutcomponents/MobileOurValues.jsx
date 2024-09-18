@@ -9,24 +9,24 @@ const MobileOurValues = () => {
     {
       icon: <FaLightbulb size={30} />,
       description:
-        'Ours is an industry where constant innovation is the key to competitive advantage. As such, we commit to consistent investment into R&D to bring to the market, products that offer superior properties and are safe for the environment. Ours is an industry where constant innovation is the key to competitive advantage.Ours is an industry where constant innovation is the key to competitive advantage.',
+        'Ours is an industry where constant innovation is the key to competitive advantage. As such, we commit to consistent investment into R&D to bring to the market, products that offer superior properties and are safe for the environment. Ours is an industry where constant innovation is the key to competitive advantage.',
     },
     {
       icon: <FaUsers size={30} />,
       description:
-        'Teamwork drives our success. We believe in working together to achieve common goals and foster productivity and team spirit. Teamwork drives our success. We believe in working together to achieve common goals and foster productivity and team spirit.We believe in working together to achieve common goals and foster productivity and team spirit.',
+        'Teamwork drives our success. We believe in working together to achieve common goals and foster productivity and team spirit. Teamwork drives our success. We believe in working together to achieve common goals and foster productivity and team spirit.',
     },
     {
       icon: <FaClipboardCheck size={30} />,
       description:
-        'Accountability ensures our integrity and commitment to our mission and values. We hold ourselves accountable for every decision and action we take. Accountability ensures our integrity and commitment to our mission and values. We hold ourselves accountable for every decision and action we take.We hold ourselves accountable for every decision and action we take.',
+        'Accountability ensures our integrity and commitment to our mission and values. We hold ourselves accountable for every decision and action we take. Accountability ensures our integrity and commitment to our mission and values.',
     },
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="max-w-full px-4 py-8 mx-auto">
       {/* Section Title */}
-      <h1 className="text-2xl font-bold text-center mb-6 mt-20">Our Values</h1>
+      <h2 className="text-2xl font-bold text-center mb-6 ">Our Values</h2>
 
       {/* Flexbox to separate icons and content */}
       <div className="flex flex-row justify-start items-center relative space-x-4">
@@ -58,9 +58,9 @@ const MobileOurValues = () => {
           ))}
         </div>
 
-        {/* Right Side - Shared Content Box with increased width and centered text */}
+        {/* Right Side - Shared Content Box with scrollable text */}
         <div className="flex justify-center items-center p-8 bg-gradient-to-r from-[#241F52] to-[#2F2568] text-white rounded-lg transition-all duration-500 ease-in-out shadow-lg" 
-             style={{ height: '300px', width: '100%' }}  // Set width to 100% for full space usage
+             style={{ height: '300px', width: '100%', overflowY: 'auto' }}  // Added overflowY for scroll
         >
           <p className="text-sm text-center leading-relaxed">
             {values[activeIndex].description}

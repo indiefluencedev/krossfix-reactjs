@@ -11,7 +11,6 @@ import reviewImage3 from '../assets/reviewsimages/re3.png';
 import reviewImage4 from '../assets/reviewsimages/review4.png';
 import '../Components/Styles/Review.css'; // Custom styles
 
-// Testimonials data
 const testimonials = [
   {
     text: "We have been using KrossFix adhesives from Vcube Chemicals for our footwear production, and the results have been outstanding. The quality and reliability of their products have significantly improved our product quality. Their team provides excellent support and ensures we always have what we need. We highly recommend KrossFix adhesives for any shoe manufacturing needs.",
@@ -39,7 +38,6 @@ const testimonials = [
   }
 ];
 
-// Custom arrows for the carousel
 const PrevArrow = ({ className, style, onClick }) => (
   <FaArrowLeft className={className} style={{ ...style, display: 'block', color: 'black' }} onClick={onClick} />
 );
@@ -55,50 +53,50 @@ const TestimonialsCarousel = () => {
 
   const settings = {
     dots: true,
-    infinite: true, // Enable infinite looping
+    infinite: true,
     speed: 500,
-    slidesToShow: 3, // Show 3 cards on larger screens
+    slidesToShow: 3,  // Show 3 cards on larger screens
     slidesToScroll: 1,
-    centerMode: false, // Disable centerMode to avoid extra space
-    centerPadding: '0px', // Remove padding to fix extra space
+    centerMode: false,
+    centerPadding: '0px',
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
     beforeChange: (current, next) => setCurrentSlide(next),
     afterChange: (current) => setCurrentSlide(current),
     responsive: [
       {
-        breakpoint: 1024, // For screens <= 1024px
-        settings: {
-          infinite: true,
-          arrows: false,
-          centerMode: false, // Disable center mode for 1024px
-          centerPadding: '0px',
-          slidesToShow: 2, // Show only 2 cards at a time
-        },
-      },
-      {
-        breakpoint: 768, // For screens <= 768px
-        settings: {
-          infinite: true, // Ensure infinite looping for responsive settings
-          arrows: false,
-          centerMode: false, // Disable center mode for 768px
-          centerPadding: '0px',
-          slidesToShow: 2, // Show only 2 cards at a time
-        },
-      },
-      {
-        breakpoint: 480, // For screens <= 480px
+        breakpoint: 1024,
         settings: {
           infinite: true,
           arrows: false,
           centerMode: false,
           centerPadding: '0px',
-          slidesToShow: 1, // Show only 1 card at a time
+          slidesToShow: 2,  // Show 2 cards for screens <= 1024px
+        },
+      },
+      {
+        breakpoint: 768,  // Adjust the 768px screen setting
+        settings: {
+          infinite: true,
+          arrows: false,
+          centerMode: false,
+          centerPadding: '0px',
+          slidesToShow: 2,  // Show 2 cards for screens <= 768px
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          infinite: true,
+          arrows: false,
+          centerMode: false,
+          centerPadding: '0px',
+          slidesToShow: 1,  // Show 1 card for screens <= 480px
         },
       },
     ],
     appendDots: dots => (
-      <div style={{ marginBottom: '50px' }}> {/* Adding margin at the bottom for the dots */}
+      <div style={{ marginBottom: '30px' }}>
         <ul> {dots} </ul>
       </div>
     ),
@@ -109,11 +107,11 @@ const TestimonialsCarousel = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsInView(true);
-          observer.unobserve(entry.target); // Stop observing once it's in view
+          observer.unobserve(entry.target);
         }
       },
       {
-        threshold: 0.5, // Trigger when 50% of the component is visible
+        threshold: 0.5,
       }
     );
 
@@ -140,36 +138,33 @@ const TestimonialsCarousel = () => {
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
     >
-      {/* Added container with a fixed width of 1240px */}
-      <div className='container mx-auto' style={{ maxWidth: '1240px' }}>
-        <div className='w-full mx-auto xs:mt-[50px] md:mt-[100px] xl:mt-[100px]'>
-          <h2 className='text-[24px] md:text-[32px] xs:mb-3 xs:mt-5 md:mb-8 text-prime font-bold xs:text-center md:text-center text-center mt-10 '>
-            Reviews
-          </h2>
+      <div className='w-full px-4 md:px-8 lg:px-12 mx-auto'>
+        <div className='w-full mx-auto mt-12 md:mt-16'>
+          <h2 className='text-2xl md:text-3xl font-bold text-center mb-8'>Reviews</h2>
           <Slider {...settings} className="slider-with-margin">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                className={`py-5`}
+                className="py-5"
                 style={{ transition: 'transform 0.5s' }}
               >
-                <div className="relative bg-white shadow-lg rounded-md overflow-hidden mt-8 p-4" style={{ height: '400px', maxWidth: '300px', margin: '0 auto', marginBottom: '10px', borderRadius: '10px', boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)' }}>
+                <div className="relative bg-white shadow-lg rounded-md overflow-hidden p-4" style={{ height: '430px', maxWidth: '300px', margin: '0 auto', marginBottom: '10px', borderRadius: '10px', boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)' }}>
                   <div className="text-orange-500 text-4xl mb-2 text-center">
                     <FaQuoteLeft />
                   </div>
-                  <div className="p-2 text-center">
-                    <p className="text-gray-600 text-[12px] overflow-hidden" style={{ maxHeight: '130px' }}>{testimonial.text}</p>
+                  <div className="p-2 text-center overflow-auto custom-scrollbar" style={{ maxHeight: '150px' }}>
+                    <p className="text-gray-600 text-sm">{testimonial.text}</p>
                   </div>
                   <LazyLoad height={100} offset={100} once>
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-[90.77px] h-[90.77px] object-cover rounded-full mx-auto mb-2"
+                      className="w-24 h-24 object-cover rounded-full mx-auto mb-2 mt-8"
                     />
                   </LazyLoad>
                   <div className="p-2 text-center">
-                    <h3 className="text-[13.15px] font-semibold mt-2">{testimonial.name}</h3>
-                    <p className="text-[13.15px] text-orange-500">{testimonial.company}</p>
+                    <h3 className="text-sm font-semibold mt-2">{testimonial.name}</h3>
+                    <p className="text-sm text-orange-500">{testimonial.company}</p>
                   </div>
                 </div>
               </motion.div>

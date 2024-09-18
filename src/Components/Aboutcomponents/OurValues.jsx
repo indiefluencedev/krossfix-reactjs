@@ -24,15 +24,17 @@ const OurValues = () => {
   ];
 
   return (
+    
+
     <div className="container mx-auto max-w-screen-xl px-4 py-16">
       {/* Section Title */}
-      <h1 className="text-4xl font-bold text-center mb-8">Our Value</h1>
+      <h1 className="text-4xl font-bold text-center mb-8">Our Values</h1>
 
       {/* Flexbox to separate icons and content */}
       <div className="flex flex-col md:flex-row mx-auto justify-center items-start relative">
         
         {/* Left Side - Icons */}
-        <div className="relative flex flex-col w-full md:w-[100px] md:h-[350px]  justify-between">
+        <div className="relative flex flex-col w-full md:w-[100px] md:h-[350px] justify-between">
           {/* Moving rectangle attached to the text box */}
           <div
             className="absolute bg-[#241F52] rounded-md transition-all duration-500 ease-in-out z-0"
@@ -77,22 +79,35 @@ const OurValues = () => {
         </div>
 
         {/* Right Side - Content Box */}
-        <div className="md:w-[1074px] w-[280px] h-[300px]  mt-10 md:mt-0 items-center md:mr-0">
+        <div className="md:w-[1074px] w-[280px] h-auto  mt-10 md:mt-0 items-center md:mr-0">
           <div
-            className="relative bg-gradient-to-r from-[#241F52] to-[#2F2568] text-white p-8 rounded-lg transition-all duration-500 ease-in-out shadow-lg"
-            style={{ height: '320px ' , 
-              
+            className="relative bg-gradient-to-r from-[#241F52] to-[#2F2568] text-white p-0 rounded-lg transition-all duration-500 ease-in-out shadow-lg"
+            style={{
+              height: '320px', 
+              overflowY: 'auto', // Enable scrolling for smaller screen
+              padding: '16px', // Ensure padding for the text
             }} 
             
-           
           >
             {/* Description dynamically changes based on active index */}
-            <p className="md:text-xl text-[14px] leading-relaxed">
+            <p className="md:text-xl text-[14px] leading-relaxed md:px-4 px-2"> {/* Added padding to text */}
               {values[activeIndex].description}
             </p>
           </div>
         </div>
       </div>
+
+      {/* Media query for 480px */}
+      <style jsx>{`
+        @media (max-width: 480px) {
+          div[style*='height: 320px'] {
+            height: auto !important;
+            max-height: 300px; /* Ensure it doesn't expand too much */
+            overflow-y: scroll; /* Enable vertical scroll */
+            padding: 16px; /* Add padding for smaller frames */
+          }
+        }
+      `}</style>
     </div>
   );
 };

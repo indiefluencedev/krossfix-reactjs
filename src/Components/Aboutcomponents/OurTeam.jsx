@@ -79,12 +79,12 @@ const OurTeam = () => {
   return (
     <div className="text-center py-10">
       <div className="max-w-[1240px] mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-0">Our Team</h2>
+        <h2 className="text-3xl font-bold md:mb-5 lg:mb-10">Our Team</h2>
 
         {/* Carousel for 480px and 768px */}
         {isMobile ? (
           <>
-            <div className="relative w-full h-[450px] overflow-hidden">
+            <div className="relative  w-96 h-[450px] overflow-hidden">
               <div className="flex justify-center items-center h-full">
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.div

@@ -3,6 +3,7 @@ import AboutHero from '../Components/Aboutcomponents/AboutHero';
 import AboutUs from '../Components/Aboutcomponents/AboutUs';
 import OurValues from '../Components/Aboutcomponents/OurValues';
 import MobileOurValues from '../Components/Aboutcomponents/MobileOurValues';
+import History from '../Components/HistoryComponnets/History';
 import OurTeam from '../Components/Aboutcomponents/OurTeam';
 
 const About = () => {
@@ -31,6 +32,7 @@ const About = () => {
       <AboutUs />
       {/* Conditionally render based on screen size */}
       {isMobile ? <MobileOurValues /> : <OurValues />}
+      <History /> 
       <OurTeam />
     </div>
   );

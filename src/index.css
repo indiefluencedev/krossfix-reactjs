@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global CSS to prevent overflow and remove default margins and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}

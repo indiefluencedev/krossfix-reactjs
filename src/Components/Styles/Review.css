@@ -13,3 +13,25 @@
 .slick-dots {
     margin-top: 10px !important; /* Reduced margin from the top */
 }
+
+
+/* Style the scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px; /* Set scrollbar width */
+}
+
+/* Style the track of the scrollbar */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Style the scrollbar handle with opacity */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(223, 221, 221, 0.7); /* Add opacity to the thumb */
+  border-radius: 10px;
+}
+
+/* Scrollbar hover effect with higher opacity */
+/* .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85, 0.9); 
+} */

@@ -10,7 +10,7 @@ const HomeAbout = () => {
   };
 
   return (
-    <div className="container max-w-[1240px] mx-auto px-4 lg:px-12 py-8 sm:py-12">
+    <div className="w-full max-w-screen-xl mx-auto px-4 lg:px-12 py-8 sm:py-12">
       {/* About Us Section */}
       <section className="flex flex-col lg:flex-row items-center justify-between">
         {/* Text Content */}
@@ -80,7 +80,7 @@ const HomeAbout = () => {
             </div>
 
             {/* Vision and Mission Content */}
-            <div className="mt-4 text-sm relative h-[200px]"> {/* Fixed height for smooth transitions */}
+            <div className="mt-4 text-sm relative h-[200px]">
               {/* Vision Content */}
               <div
                 className={`absolute top-0 left-0 w-full transition-opacity duration-500 ease-in-out ${
@@ -89,15 +89,13 @@ const HomeAbout = () => {
                 aria-hidden={activeTab !== 'vision'}
                 role="tabpanel"
               >
-                {activeTab === 'vision' && (
-                  <p>
-                    At Super Bond, our vision is to be the global leader in adhesive manufacturing, delivering superior
-                    quality products and unmatched service. We strive to empower our customers' success by providing
-                    them with reliable, innovative, and sustainable adhesive solutions. Through continuous research,
-                    development, and collaboration, we aim to anticipate and meet the evolving needs of our customers,
-                    ensuring their satisfaction and loyalty.
-                  </p>
-                )}
+                <p>
+                  At Super Bond, our vision is to be the global leader in adhesive manufacturing, delivering superior
+                  quality products and unmatched service. We strive to empower our customers' success by providing
+                  them with reliable, innovative, and sustainable adhesive solutions. Through continuous research,
+                  development, and collaboration, we aim to anticipate and meet the evolving needs of our customers,
+                  ensuring their satisfaction and loyalty.
+                </p>
               </div>
 
               {/* Mission Content */}
@@ -108,15 +106,13 @@ const HomeAbout = () => {
                 aria-hidden={activeTab !== 'mission'}
                 role="tabpanel"
               >
-                {activeTab === 'mission' && (
-                  <p>
-                    Our mission is to develop, manufacture, and supply adhesive products of the highest quality, meeting
-                    and exceeding industry standards. We are dedicated to providing innovative solutions that enhance our
-                    customers' productivity, efficiency, and competitiveness. By investing in cutting-edge technology,
-                    fostering a culture of excellence, and nurturing a highly skilled team, we aim to deliver superior
-                    products and services that consistently surpass our customers' expectations.
-                  </p>
-                )}
+                <p>
+                  Our mission is to develop, manufacture, and supply adhesive products of the highest quality, meeting
+                  and exceeding industry standards. We are dedicated to providing innovative solutions that enhance our
+                  customers' productivity, efficiency, and competitiveness. By investing in cutting-edge technology,
+                  fostering a culture of excellence, and nurturing a highly skilled team, we aim to deliver superior
+                  products and services that consistently surpass our customers' expectations.
+                </p>
               </div>
             </div>
           </div>

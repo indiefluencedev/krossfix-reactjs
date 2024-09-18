@@ -4,29 +4,29 @@ import { FaFacebookF, FaLinkedinIn, FaArrowRight } from 'react-icons/fa'; // For
 
 const HomeFooter = () => {
   return (
-    <footer className="bg-[#131C23] text-white py-8">
-      <div className="container mx-auto px-4 md:px-8 lg:px-12">
+    <footer className="bg-[#131C23] text-white py-8 w-full">
+      <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12">
         {/* First Row: Logo and Contact Us */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-4 w-full">
           {/* For 480px: Logo and Contact Us in the same row */}
           <div className="md:hidden flex items-center justify-between w-full">
             <img src={Logo} alt="KrossFix Logo" className="w-32" />
-            <a href="#contact" className="flex items-center text-[#F19510] hover:text-[#f2980f]">
+            <a href="#contact" className="flex items-center text-[#F19510] hover:text-[#f2980f] whitespace-nowrap">
               Contact Us <FaArrowRight className="ml-2 rotate-45" />
             </a>
           </div>
 
           {/* For larger screens: Shoe Adhesive Manufacturing and Contact Us */}
-          <h1 className="hidden md:block text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-0 text-center md:text-left">
+          <h1 className="hidden md:block text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-0 text-center md:text-left w-full">
             Shoe Adhesive Manufacturing
           </h1>
-          <a href="#contact" className="hidden md:flex items-center text-[#F19510] hover:text-[#f2980f] justify-center md:justify-end">
+          <a href="#contact" className="hidden md:flex items-center text-[#F19510] hover:text-[#f2980f] justify-center md:justify-end md:mr-10 whitespace-nowrap">
             Contact Us <FaArrowRight className="ml-2 rotate-45 " />
           </a>
         </div>
 
         {/* Horizontal Line */}
-        <hr className="border-t border-white-800 w-full" />
+        <hr className="border-t border-gray-700 w-full" />
 
         {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
@@ -73,15 +73,15 @@ const HomeFooter = () => {
               <hr className="border-t-2 border-[#F19510] w-12 mx-auto md:mx-0 mt-1" />
             </a>
             <a href="#about" className="text-[#bebcbc] hover:text-[#f2980f]">About</a>
-            <a href="#products" className="text-[#bebcbc] hover:text-[#f2980]">Products</a>
-            <a href="#contact" className="text-[#bebcbc] hover:text-[#f2980]">Contact</a>
+            <a href="#products" className="text-[#bebcbc] hover:text-[#f2980f]">Products</a>
+            <a href="#contact" className="text-[#bebcbc] hover:text-[#f2980f]">Contact</a>
           </div>
         </div>
 
         {/* Footer Bottom: Copyright */}
         <div className="mt-8 text-center pt-4">
           {/* Horizontal line only visible in 480px */}
-          <hr className="hr-mobile border-t border-white-800 my-4" />
+          <hr className="hr-mobile border-t border-gray-700 my-4" />
           <p className="text-[#bebcbc]">©2024 <a href="#" className="text-[#f2980f]">Vcube Chemicals Pvt. Ltd.</a> All Rights Reserved.</p>
         </div>
       </div>

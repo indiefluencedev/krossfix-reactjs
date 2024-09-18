@@ -49,7 +49,7 @@ const HomePage = () => {
       {isMobile ? <MobileHomeProducts /> : <HomeProducts />}
       <Gallery />
       <Reviews /> 
-      <Queries />
+     <Queries/>
       
     </div>
   );
