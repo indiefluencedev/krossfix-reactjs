@@ -5,8 +5,9 @@ import Navbar from './Components/Layouts/Navbar';  // Import the Navbar
 import Home from './Pages/Home';       //Import page components
 import About from './Pages/About';
 import Contact from './Pages/Contact';
-import Products from './Pages/Products';
-import HomeFooter from './Components/HomeFooter';
+import Products1 from './Pages/Products1';
+import Products2 from './Pages/Products2';
+import Footer from './Components/Layouts/Footer';
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/products/products1" element={<Products1 />} />
+        <Route path="/products/products2" element={<Products2 />} />
       </Routes>
-      <HomeFooter/>
+      <Footer/>
     </Router>
   );
 }

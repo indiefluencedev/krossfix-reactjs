@@ -57,14 +57,14 @@ const Navbar = () => {
             {isDropdownOpen && (
               <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg z-50 w-40">
                 <Link
-                  to="/products/product1"
+                  to="/products/products1"
                   className="block px-4 py-2 text-black hover:bg-gray-100"
                   onClick={() => setDropdownOpen(false)}
                 >
                   Product 1
                 </Link>
                 <Link
-                  to="/products/product2"
+                  to="/products/products2"
                   className="block px-4 py-2 text-black hover:bg-gray-100"
                   onClick={() => setDropdownOpen(false)}
                 >

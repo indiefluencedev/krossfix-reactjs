@@ -13,13 +13,13 @@ const ContactHero = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center" 
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center" 
            style={{ zIndex: 2 }}> {/* Overlay z-index higher than the image */}
         {/* Text Content */}
-        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold" 
+        <h2 className="text-white mt-10 text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold" 
             style={{ zIndex: 3 }}>
           Contact Us
-        </h1>
+        </h2>
       </div>
     </div>
   );
