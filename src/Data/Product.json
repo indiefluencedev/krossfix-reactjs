@@ -1,0 +1,106 @@
+{
+    "categories": [
+      {
+        "categoryName": "Product 1",
+        "products": [
+          {
+            "Product Code": "CleanX 002M",
+            "Application/Use": "Print cleaning, Reducer",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Excellent cleaning, suitable as ink reducer"
+          },
+          {
+            "Product Code": "CleanX 911",
+            "Application/Use": "Synthetic upper cleaning",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Excellent cleaning for all kind of upper"
+          },
+          {
+            "Product Code": "CleanX 933",
+            "Application/Use": "PU / PVC / Rubber cleaning",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Excellent cleaning of PU, PVC, Rubber soles"
+          },
+          {
+            "Product Code": "CleanX 832",
+            "Application/Use": "EVA / Phylon cleaning",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Excellent cleaner for Phylon & EVA soles"
+          },
+          {
+            "Product Code": "CleanX VC",
+            "Application/Use": "Finishing Cleaner for Upper",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Harmless to upper material"
+          }
+        ]
+      },
+      {
+        "categoryName": "Product 2",
+        "products": [
+          {
+            "Product Code": "CleanX V6",
+            "Application/Use": "Finishing Cleaner for Phylon",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Excellent cleaning of shoe sole"
+          },
+          {
+            "Product Code": "CleanX V6R",
+            "Application/Use": "Finishing Cleaner for EVA",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Excellent cleaning of shoe sole"
+          },
+          {
+            "Product Code": "CleanX 123",
+            "Application/Use": "Leather Upper Cleaning",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Removes dirt and oil from leather surfaces"
+          },
+          {
+            "Product Code": "CleanX 456",
+            "Application/Use": "Shoe Polish Cleaner",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Enhances shine and smoothness"
+          },
+          {
+            "Product Code": "CleanX 789",
+            "Application/Use": "Rubber Sole Cleaner",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Removes stains and marks from rubber soles"
+          },
+          {
+            "Product Code": "CleanX 012",
+            "Application/Use": "Sneaker Cleaner",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Effective on fabric and mesh sneakers"
+          },
+          {
+            "Product Code": "CleanX 345",
+            "Application/Use": "Canvas Cleaner",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Safe for canvas and fabric surfaces"
+          },
+          {
+            "Product Code": "CleanX 678",
+            "Application/Use": "Insole Cleaner",
+            "Appearance": "Colorless Transparent Liquid",
+            "Viscosity (CPS / 30C)": "NA",
+            "Characteristics": "Eliminates odor and refreshes insoles"
+          }
+        ]
+      }
+    ]
+  }
+  

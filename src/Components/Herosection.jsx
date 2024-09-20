@@ -24,11 +24,11 @@ const Herosection = () => {
             className="h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${Background1})` }}
           >
-            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-70"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl mt-10 font-bold text-center mb-4">
+              <h2 className="text-3xl sm:text-3xl md:text-4xl mt-10 font-bold text-center mb-4">
                 A range of smart waterproofing solutions
-              </h1>
+              </h2>
               <p className="text-base sm:text-lg md:text-xl text-center mb-8">
                 At Asian Paints, we offer the best waterproofing solutions.
               </p>
@@ -48,11 +48,11 @@ const Herosection = () => {
             className="h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${Background2})` }}
           >
-            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-70"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 mt-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 mt-10">
                 Transform your space easily with DIY products
-              </h1>
+              </h2>
               <p className="text-base sm:text-lg md:text-xl text-center mb-8">
                 Asian Paints range of DIY products makes transformation easy.
               </p>
@@ -72,11 +72,11 @@ const Herosection = () => {
             className="h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${Background3})` }}
           >
-            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-30"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 mt-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 mt-10">
                 A range of smart waterproofing solutions
-              </h1>
+              </h2>
               <p className="text-base sm:text-lg md:text-xl text-center mb-8">
                 At Asian Paints, we offer the best waterproofing solutions.
               </p>

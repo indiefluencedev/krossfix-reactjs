@@ -137,39 +137,43 @@ const TestimonialsCarousel = () => {
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
+      className="mx-auto" // Centering the container
     >
-      <div className='w-full px-4 md:px-8 lg:px-12 mx-auto'>
+      <div className='w-full md:px-4 lg:px-8 mx-auto'>
         <div className='w-full mx-auto mt-12 md:mt-16'>
           <h2 className='text-2xl md:text-3xl font-bold text-center mb-8'>Reviews</h2>
-          <Slider {...settings} className="slider-with-margin">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="py-5"
-                style={{ transition: 'transform 0.5s' }}
-              >
-                <div className="relative bg-white shadow-lg rounded-md overflow-hidden p-4" style={{ height: '430px', maxWidth: '300px', margin: '0 auto', marginBottom: '10px', borderRadius: '10px', boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)' }}>
-                  <div className="text-orange-500 text-4xl mb-2 text-center">
-                    <FaQuoteLeft />
+          {/* Container with max-width for 1440px screens */}
+          <div className='w-full mx-auto' style={{ maxWidth: '1240px' }}>
+            <Slider {...settings} className="slider-with-margin">
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={index}
+                  className="py-5"
+                  style={{ transition: 'transform 0.5s' }}
+                >
+                  <div className="relative bg-white shadow-lg rounded-md overflow-hidden p-4" style={{ height: '430px', maxWidth: '300px', margin: '0 auto', marginBottom: '10px', borderRadius: '10px', boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)' }}>
+                    <div className="text-orange-500 text-4xl mb-2 text-center">
+                      <FaQuoteLeft />
+                    </div>
+                    <div className="p-2 text-center overflow-auto custom-scrollbar" style={{ maxHeight: '150px' }}>
+                      <p className="text-gray-600 text-sm">{testimonial.text}</p>
+                    </div>
+                    <LazyLoad height={100} offset={100} once>
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-24 h-24 object-cover rounded-full mx-auto mb-2 mt-8"
+                      />
+                    </LazyLoad>
+                    <div className="p-2 text-center">
+                      <h3 className="text-sm font-semibold mt-2">{testimonial.name}</h3>
+                      <p className="text-sm text-orange-500">{testimonial.company}</p>
+                    </div>
                   </div>
-                  <div className="p-2 text-center overflow-auto custom-scrollbar" style={{ maxHeight: '150px' }}>
-                    <p className="text-gray-600 text-sm">{testimonial.text}</p>
-                  </div>
-                  <LazyLoad height={100} offset={100} once>
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-24 h-24 object-cover rounded-full mx-auto mb-2 mt-8"
-                    />
-                  </LazyLoad>
-                  <div className="p-2 text-center">
-                    <h3 className="text-sm font-semibold mt-2">{testimonial.name}</h3>
-                    <p className="text-sm text-orange-500">{testimonial.company}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </Slider>
+                </motion.div>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </motion.div>

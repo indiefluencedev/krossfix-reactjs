@@ -1,0 +1,33 @@
+/* Add this to your global CSS file if necessary */
+@media (max-width: 1240px) {
+    /* Custom styles for screens up to 1240px */
+    .table-auto th,
+    .table-auto td {
+      padding: 0.5rem 1rem; /* Adjust padding */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Custom styles for screens up to 768px */
+    .table-auto th,
+    .table-auto td {
+      padding: 0.5rem 0.5rem; /* Adjust padding */
+      font-size: 0.875rem; /* Smaller font size */
+    }
+  }
+  
+ /* Additional CSS for 480px frame */
+@media (max-width: 480px) {
+    .table-auto th,
+    .table-auto td {
+      padding: 0.5rem 0.75rem; /* Adjust padding for smaller screen */
+      font-size: 0.875rem; /* Smaller font size for better readability */
+    }
+  
+    .table-auto {
+      min-width: 800px; /* Ensures horizontal scroll activation */
+    }
+  }
+  
+  
+  

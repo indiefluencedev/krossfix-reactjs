@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa'; // Icons
-import Logo from '../../assets/Logo 1.png'; // Update with your logo path
+import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import Logo from '../../assets/Logo 1.png';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false); // State for mobile menu
@@ -17,14 +18,25 @@ const Navbar = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
+  // Variants for Framer Motion
+  const dropdownVariants = {
+    hidden: { opacity: 0, height: 0 },
+    visible: { opacity: 1, height: 'auto' },
+  };
+
+  const iconVariants = {
+    open: { rotate: 180 },
+    closed: { rotate: 0 },
+  };
+
   return (
-    <nav className="bg-white shadow-md fixed w-full z-50">
-      <div className="w-full max-w-screen-xl mx-auto flex items-center justify-between py-4 px-6">
+    <nav className="bg-white shadow-md fixed w-full z-50 top-0">
+      <div className="w-full max-w-screen-xl mx-auto flex items-center justify-between py-4 px-4 lg:px-6">
         
         {/* Logo */}
         <div>
           <Link to="/">
-            <img src={Logo} alt="Logo" className="h-8 ml-3 md:h-10 md:ml-10" />
+            <img src={Logo} alt="Logo" className="h-8 md:h-10" />
           </Link>
         </div>
 
@@ -36,7 +48,7 @@ const Navbar = () => {
         </div>
 
         {/* Navbar links (Desktop) */}
-        <div className="hidden md:flex md:items-center md:space-x-8">
+        <div className={`hidden md:flex md:items-center space-x-4 lg:space-x-10`}>
           <Link to="/" className="text-black hover:text-orange-500">
             Home
           </Link>
@@ -51,27 +63,43 @@ const Navbar = () => {
               className="flex items-center text-black hover:text-orange-500"
             >
               Products
-              <FaChevronDown className="ml-1 text-sm" />
+              <motion.div
+                initial="closed"
+                animate={isDropdownOpen ? 'open' : 'closed'}
+                variants={iconVariants}
+                transition={{ duration: 0.3 }}
+              >
+                <FaChevronDown className="ml-1 text-sm" />
+              </motion.div>
             </button>
-            {/* Dropdown Menu */}
-            {isDropdownOpen && (
-              <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg z-50 w-40">
-                <Link
-                  to="/products/products1"
-                  className="block px-4 py-2 text-black hover:bg-gray-100"
-                  onClick={() => setDropdownOpen(false)}
+            <AnimatePresence>
+              {isDropdownOpen && (
+                <motion.div
+                  className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg z-50 w-40"
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  variants={dropdownVariants}
+                  transition={{ duration: 0.3 }}
+                  onMouseLeave={() => setDropdownOpen(false)}
                 >
-                  Product 1
-                </Link>
-                <Link
-                  to="/products/products2"
-                  className="block px-4 py-2 text-black hover:bg-gray-100"
-                  onClick={() => setDropdownOpen(false)}
-                >
-                  Product 2
-                </Link>
-              </div>
-            )}
+                  <Link
+                    to="/products/products1"
+                    className="block px-4 py-2 text-black hover:bg-gray-100"
+                    onClick={() => setDropdownOpen(false)} // Close dropdown on click
+                  >
+                    Product 1
+                  </Link>
+                  <Link
+                    to="/products/products2"
+                    className="block px-4 py-2 text-black hover:bg-gray-100"
+                    onClick={() => setDropdownOpen(false)} // Close dropdown on click
+                  >
+                    Product 2
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <Link to="/contact" className="text-black hover:text-orange-500">
@@ -81,7 +109,7 @@ const Navbar = () => {
 
         {/* Get in Touch Button (Desktop) */}
         <div className="hidden md:block">
-          <button className="bg-orange-500 text-white py-2 px-6 rounded hover:bg-orange-600 mr-10">
+          <button className="bg-orange-500 text-white py-2 px-4 lg:px-6 rounded hover:bg-orange-600">
             Get in Touch
           </button>
         </div>
@@ -90,7 +118,7 @@ const Navbar = () => {
         <div
           className={`${
             isMenuOpen ? 'block' : 'hidden'
-          } absolute top-16 left-0 w-full bg-white h-screen md:hidden z-40`}
+          } absolute top-16 left-0 w-full bg-white h-screen md:hidden z-40 overflow-y-auto`} 
         >
           <div className="flex flex-col items-start p-6">
             <Link
@@ -114,26 +142,43 @@ const Navbar = () => {
                 className="flex justify-between items-center text-black hover:text-orange-500 w-full text-lg border-b border-gray-300 pb-2"
               >
                 Products
-                <FaChevronDown className="ml-2 text-sm" />
+                <motion.div
+                  initial="closed"
+                  animate={isDropdownOpen ? 'open' : 'closed'}
+                  variants={iconVariants}
+                  transition={{ duration: 0.3 }}
+                >
+                  <FaChevronDown className="ml-2 text-sm" />
+                </motion.div>
               </button>
-              {isDropdownOpen && (
-                <div className="mt-2 bg-white shadow-lg rounded-lg w-full">
-                  <Link
-                    to="/categories/category1"
-                    className="block px-4 py-2 text-black hover:bg-gray-100"
-                    onClick={handleMenuToggle}
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.div
+                    className="mt-2 bg-white shadow-lg rounded-lg w-full"
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={dropdownVariants}
+                    transition={{ duration: 0.3 }}
+                    onMouseLeave={() => setDropdownOpen(false)}
                   >
-                    Product 1
-                  </Link>
-                  <Link
-                    to="/categories/category2"
-                    className="block px-4 py-2 text-black hover:bg-gray-100"
-                    onClick={handleMenuToggle}
-                  >
-                    Product 2
-                  </Link>
-                </div>
-              )}
+                    <Link
+                      to="/products/products1"
+                      className="block px-4 py-2 text-black hover:bg-gray-100"
+                      onClick={handleMenuToggle}
+                    >
+                      Product 1
+                    </Link>
+                    <Link
+                      to="/products/products2"
+                      className="block px-4 py-2 text-black hover:bg-gray-100"
+                      onClick={handleMenuToggle}
+                    >
+                      Product 2
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <Link
