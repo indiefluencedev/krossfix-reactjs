@@ -1,30 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { FaLightbulb, FaBullseye } from 'react-icons/fa'; // Icons from react-icons
 import AboutImage from '../assets/image8.png'; // About Us Image
 
 const HomeAbout = () => {
   const [activeTab, setActiveTab] = useState('vision'); // Set "vision" as the default active tab
+  const [isInView, setIsInView] = useState(false);
+  const aboutRef = useRef(null);
 
   const toggleContent = (tab) => {
     setActiveTab(tab); // Set the active tab to 'vision' or 'mission'
   };
 
+  // Intersection Observer to detect visibility
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the component is visible
+      }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (aboutRef.current) {
+        observer.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
+
+  // Animation variants for fade-in effect
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
   return (
-    <div className="w-full max-w-screen-xl mx-auto px-4 lg:px-12 py-8 sm:py-12">
+    <motion.div
+      ref={aboutRef}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+      variants={containerVariants}
+      className="w-full max-w-screen-xl mx-auto px-4 lg:px-12 py-8 sm:py-12"
+    >
       {/* About Us Section */}
       <section className="flex flex-col lg:flex-row items-center justify-between">
         {/* Text Content */}
         <div className="lg:w-1/2 text-left mb-10 lg:mb-0">
           <h2 className="text-3xl font-bold mb-6">About Us</h2>
-          <p className="text-lg mb-4">
+          <p className="text-lg mb-4  font-semibold">
             Super Bond Adhesives, a leading adhesive manufacturing company with a rich history spanning over{' '}
             <strong>four decades</strong>.
           </p>
-          <p className="text-lg mb-4">
+          <p className="text-lg mb-4  font-semibold">
             Since our establishment in 1974, we have been dedicated to providing innovative adhesive solutions that
             cater to various industries and applications.
           </p>
-          <p className="text-lg mb-4">
+          <p className="text-lg mb-4  font-semibold">
             Our commitment to excellence, customer satisfaction, and continuous improvement has made us a trusted
             partner for businesses worldwide.
           </p>
@@ -47,7 +87,7 @@ const HomeAbout = () => {
                   }`}
                 />
                 <h3
-                  className={`md:text-xl text-sm ml-4 ${
+                  className={`md:text-xl text-sm ml-4  ${
                     activeTab === 'vision' ? 'text-orange-500' : 'text-black'
                   }`}
                 >
@@ -70,7 +110,7 @@ const HomeAbout = () => {
                   }`}
                 />
                 <h3
-                  className={`md:text-xl text-sm ml-4 ${
+                  className={`md:text-xl text-sm ml-4  ${
                     activeTab === 'mission' ? 'text-orange-500' : 'text-black'
                   }`}
                 >
@@ -80,7 +120,7 @@ const HomeAbout = () => {
             </div>
 
             {/* Vision and Mission Content */}
-            <div className="mt-4 text-sm relative h-[200px]">
+            <div className="mt-2 text-sm relative h-[200px]">
               {/* Vision Content */}
               <div
                 className={`absolute top-0 left-0 w-full transition-opacity duration-500 ease-in-out ${
@@ -127,7 +167,7 @@ const HomeAbout = () => {
           />
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

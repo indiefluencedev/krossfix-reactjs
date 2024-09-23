@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion'; // Import framer-motion
 import data from '../Data/Product.json'; // Adjust the path as necessary
 
 const TableComponent = ({ selectedProduct }) => {
@@ -28,8 +29,8 @@ const TableComponent = ({ selectedProduct }) => {
             key={idx}
             className={`border px-4 py-2 text-center text-black ${
               key === 'Product Code'
-                ? 'font-bold text-lg' // Apply boldness and 16px font size to Product Code
-                : 'text-base' // Apply 14px font size to other columns
+                ? 'font-bold text-lg'
+                : 'text-base'
             }`}
             style={{ fontSize: key === 'Product Code' ? '16px' : '14px' }}
           >
@@ -45,12 +46,21 @@ const TableComponent = ({ selectedProduct }) => {
     (category) => category.categoryName === selectedProduct
   );
 
+  // Fade-in animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 }, // Initial state
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } }, // Animation
+  };
+
   return (
     <div className="container mx-auto p-4">
       {selectedCategory ? (
-        <div
+        <motion.div
           key={selectedCategory.categoryName}
           className="mb-8 shadow-lg rounded-lg overflow-hidden"
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn} // Apply fade-in animation
         >
           {/* Apply horizontal scroll effect for 480px screen */}
           <div className="overflow-x-auto">
@@ -66,9 +76,15 @@ const TableComponent = ({ selectedProduct }) => {
               </tbody>
             </table>
           </div>
-        </div>
+        </motion.div>
       ) : (
-        <div>No products available for {selectedProduct}</div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+        >
+          No products available for {selectedProduct}
+        </motion.div>
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Arrow icons
 import team1 from '../../assets/AboutHeroimages/team1.png';
@@ -22,6 +22,8 @@ const OurTeam = () => {
   const [isTablet, setIsTablet] = useState(false); // Detect tablet view for 768px
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0); // Keep track of direction for smooth animation
+  const teamRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
 
   // Detect screen size to enable carousel for 480px and 768px
   useEffect(() => {
@@ -29,11 +31,36 @@ const OurTeam = () => {
       setIsMobile(window.innerWidth <= 480); // Mobile view
       setIsTablet(window.innerWidth > 480 && window.innerWidth <= 768); // Tablet view for 768px
     };
-    
+
     handleResize(); // Initial check
     window.addEventListener('resize', handleResize); // Resize listener
-    
+
     return () => window.removeEventListener('resize', handleResize); // Cleanup listener
+  }, []);
+
+  // Observer to detect when the team section enters the viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (teamRef.current) {
+      observer.observe(teamRef.current);
+    }
+
+    return () => {
+      if (teamRef.current) {
+        observer.unobserve(teamRef.current);
+      }
+    };
   }, []);
 
   const nextSlide = () => {
@@ -57,7 +84,7 @@ const OurTeam = () => {
   };
 
   // Variants for smooth slide animation
-  const variants = {
+  const slideVariants = {
     enter: (direction) => ({
       x: direction > 0 ? 300 : -300, // Enter from left or right depending on direction
       opacity: 0,
@@ -76,22 +103,34 @@ const OurTeam = () => {
     }),
   };
 
+  // Fade-in animation for the entire component
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
+  };
+
   return (
-    <div className="text-center py-10">
+    <motion.div
+      ref={teamRef}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+      variants={fadeInVariants}
+      className="text-center py-10"
+    >
       <div className="max-w-[1240px] mx-auto px-4">
         <h2 className="text-3xl font-bold md:mb-5 lg:mb-10">Our Team</h2>
 
         {/* Carousel for 480px and 768px */}
         {isMobile ? (
           <>
-            <div className="relative  w-96 h-[450px] overflow-hidden">
+            <div className="relative w-96 h-[450px] overflow-hidden">
               <div className="flex justify-center items-center h-full">
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.div
                     key={currentSlide}
                     className="relative p-4 bg-white shadow-md rounded-lg w-80 mx-auto"
                     custom={direction}
-                    variants={variants}
+                    variants={slideVariants}
                     initial="enter"
                     animate="center"
                     exit="exit"
@@ -151,7 +190,7 @@ const OurTeam = () => {
                     key={currentSlide}
                     className="relative p-4 bg-white shadow-md rounded-lg w-80"
                     custom={direction}
-                    variants={variants}
+                    variants={slideVariants}
                     initial="enter"
                     animate="center"
                     exit="exit"
@@ -176,7 +215,7 @@ const OurTeam = () => {
                     key={currentSlide + 1}
                     className="relative p-4 bg-white shadow-md rounded-lg w-80"
                     custom={direction}
-                    variants={variants}
+                    variants={slideVariants}
                     initial="enter"
                     animate="center"
                     exit="exit"
@@ -252,7 +291,7 @@ const OurTeam = () => {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

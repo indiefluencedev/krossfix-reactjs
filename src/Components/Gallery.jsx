@@ -1,5 +1,6 @@
-import React from 'react';
-import image1 from '../assets/galleryimages/bag.jpg'; // Replace with actual image paths
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import image1 from '../assets/galleryimages/bag.jpg'; 
 import image2 from '../assets/galleryimages/basket.jpg';
 import image3 from '../assets/galleryimages/colorshoe.jpg';
 import image4 from '../assets/galleryimages/cream.jpg';
@@ -14,9 +15,47 @@ import image12 from '../assets/galleryimages/whitecream.jpg';
 import '../Components/Styles/Gallery.css';
 
 const Gallery = () => {
+  const [isInView, setIsInView] = useState(false);
+  const galleryRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(entry.target); // Stop observing once it becomes visible
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (galleryRef.current) {
+      observer.observe(galleryRef.current);
+    }
+
+    return () => {
+      if (galleryRef.current) {
+        observer.unobserve(galleryRef.current);
+      }
+    };
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
+  };
+
   return (
-    <div>
-      <h2 className="gallery-heading">Gallery</h2> {/* Added heading */}
+    <motion.div
+      ref={galleryRef}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+      variants={containerVariants}
+      className="gallery-container mx-auto"
+    >
+      <h2 className="gallery-heading">Gallery</h2>
       <div className="grid-container">
         <div className="grid-item item1"><img src={image1} alt="item" /></div>
         <div className="grid-item item2"><img src={image2} alt="item" /></div>
@@ -36,7 +75,7 @@ const Gallery = () => {
         <div className="grid-item item12"><img src={image2} alt="item" /></div>
         <div className="grid-item item12"><img src={image8} alt="item" /></div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

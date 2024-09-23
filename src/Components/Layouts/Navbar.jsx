@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa'; // Use FaChevronDown for the dropdown icon
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '../../assets/Logo 1.png';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false); // State for mobile menu
   const [isDropdownOpen, setDropdownOpen] = useState(false); // State for dropdown
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   // Toggle the mobile menu
   const handleMenuToggle = () => {
@@ -48,11 +50,11 @@ const Navbar = () => {
         </div>
 
         {/* Navbar links (Desktop) */}
-        <div className={`hidden md:flex md:items-center space-x-4 lg:space-x-10`}>
-          <Link to="/" className="text-black hover:text-orange-500">
+        <div className={`hidden md:flex md:items-center space-x-4 lg:space-x-10 `}>
+          <Link to="/" className="text-[#F49610] font-medium">
             Home
           </Link>
-          <Link to="/about" className="text-black hover:text-orange-500">
+          <Link to="/about" className="text-[#20212F]  hover:underline hover:text-orange-500 font-medium">
             About
           </Link>
 
@@ -60,7 +62,7 @@ const Navbar = () => {
           <div className="relative">
             <button
               onClick={handleDropdownToggle}
-              className="flex items-center text-black hover:text-orange-500"
+              className="flex items-center text-[#20212F] hover:text-orange-500 font-medium"
             >
               Products
               <motion.div
@@ -69,7 +71,8 @@ const Navbar = () => {
                 variants={iconVariants}
                 transition={{ duration: 0.3 }}
               >
-                <FaChevronDown className="ml-1 text-sm" />
+                {/* Styled FaChevronDown to resemble the simple triangle */}
+                <FaChevronDown className="ml-1 text-sm" style={{ transform: 'scaleX(1.2)', marginTop: '1px' }} />
               </motion.div>
             </button>
             <AnimatePresence>
@@ -101,15 +104,14 @@ const Navbar = () => {
               )}
             </AnimatePresence>
           </div>
-
-          <Link to="/contact" className="text-black hover:text-orange-500">
-            Contact Us
-          </Link>
         </div>
 
         {/* Get in Touch Button (Desktop) */}
         <div className="hidden md:block">
-          <button className="bg-orange-500 text-white py-2 px-4 lg:px-6 rounded hover:bg-orange-600">
+          <button
+            className="bg-orange-500 text-white py-2 px-4 lg:px-6 rounded hover:bg-orange-600"
+            onClick={() => navigate('/contact')} // Navigate to contact page
+          >
             Get in Touch
           </button>
         </div>
@@ -123,7 +125,7 @@ const Navbar = () => {
           <div className="flex flex-col items-start p-6">
             <Link
               to="/"
-              className="text-black hover:text-orange-500 py-2 text-lg w-full border-b border-gray-300"
+              className="text-black hover:text-orange-500 py-2 text-lg w-full border-b border-gray-300 "
               onClick={handleMenuToggle}
             >
               Home
@@ -148,7 +150,8 @@ const Navbar = () => {
                   variants={iconVariants}
                   transition={{ duration: 0.3 }}
                 >
-                  <FaChevronDown className="ml-2 text-sm" />
+                  {/* Styled FaChevronDown to resemble the simple triangle */}
+                  <FaChevronDown className="ml-2 text-sm" style={{ transform: 'scaleX(1.2)', marginTop: '1px' }} />
                 </motion.div>
               </button>
               <AnimatePresence>

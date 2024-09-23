@@ -12,7 +12,7 @@ const AboutHero = () => {
     >
       
       {/* Darker overlay for better text visibility */}
-      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
       
       {/* Centered text with improved visibility */}
       <div className="relative z-20 flex justify-center items-center h-full">

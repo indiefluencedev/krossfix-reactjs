@@ -1,32 +1,64 @@
-import React, { useState } from 'react';
-import { FaLightbulb, FaUsers, FaClipboardCheck } from 'react-icons/fa'; // Icons for idea, teamwork, accountability
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { FaLightbulb, FaUsers, FaClipboardCheck } from 'react-icons/fa';
 
 const OurValues = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isInView, setIsInView] = useState(false);
 
   // Array of values with icon and description
   const values = [
     {
       icon: <FaLightbulb size={50} />,
       description:
-        'Ours is an industry where constant innovation is the key to competitive advantage. As such, we commit to consistent investment into R&D to bring to the market, products that offer superior properties and are safe for the environment. Ours is an industry where constant innovation is the key to competitive advantage.',
+        'Ours is an industry where constant innovation is the key to competitive advantage. As such, we commit to consistent investment into R&D to bring to the market, products that offer superior properties and are safe for the environment. Ours is an industry where constant innovation is the key to competitive advantage.Ours is an industry where constant innovation is the key to competitive advantage. As such, we commit to consistent investment into R&D to bring to the market, products that offer superior properties and are safe for the environment. Ours is an industry where constant innovation is the key to competitive advantage.',
     },
     {
       icon: <FaUsers size={50} />,
       description:
-        'Teamwork drives our success. We believe in working together to achieve common goals and foster productivity and team spirit. Teamwork drives our success. We believe in working together to achieve common goals and foster productivity and team spirit.',
+        'Teamwork drives our success. We believe in working together to achieve common goals and foster productivity and team spirit. Teamwork drives our success. We believe in working together to achieve common goals and foster productivity and team spirit.Teamwork drives our success. We believe in working together to achieve common goals and foster productivity and team spirit. Teamwork drives our success. We believe in working together to achieve common goals and foster productivity and team spirit.',
     },
     {
       icon: <FaClipboardCheck size={50} />,
       description:
-        'Accountability ensures our integrity and commitment to our mission and values. We hold ourselves accountable for every decision and action we take. Accountability ensures our integrity and commitment to our mission and values. We hold ourselves accountable for every decision and action we take.',
+        'Accountability ensures our integrity and commitment to our mission and values. We hold ourselves accountable for every decision and action we take. Accountability ensures our integrity and commitment to our mission and values. We hold ourselves accountable for every decision and action we take.Accountability ensures our integrity and commitment to our mission and values. We hold ourselves accountable for every decision and action we take. Accountability ensures our integrity and commitment to our mission and values. We hold ourselves accountable for every decision and action we take.',
     },
   ];
 
-  return (
-    
+  // Check if component is in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the component is visible
+      }
+    );
 
-    <div className="container mx-auto max-w-screen-xl px-4 py-16">
+    const element = document.getElementById('our-values-section');
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
+  return (
+    <motion.div
+      id="our-values-section"
+      className="container mx-auto max-w-screen-xl px-4 py-16"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 1, ease: 'easeInOut' }} // Fade-in animation
+    >
       {/* Section Title */}
       <h1 className="text-4xl font-bold text-center mb-8">Our Values</h1>
 
@@ -45,7 +77,6 @@ const OurValues = () => {
               height: '100px', // Adjusted height
               borderTopRightRadius: '10px',
               borderBottomRightRadius: '10px',
-              
             }}
           ></div>
 
@@ -54,7 +85,7 @@ const OurValues = () => {
             className="relative flex items-center justify-center cursor-pointer transition-colors duration-300 z-10"
             onClick={() => setActiveIndex(0)}
           >
-            <div className={`absolute top-8  flex justify-center items-center ${activeIndex === 0 ? 'text-orange-500' : 'text-blue-500'}`}>
+            <div className={`absolute top-8 flex justify-center items-center ${activeIndex === 0 ? 'text-orange-500' : 'text-blue-500'}`}>
               <FaLightbulb size={50} />
             </div>
           </div>
@@ -63,7 +94,7 @@ const OurValues = () => {
             className="relative flex items-center justify-center cursor-pointer transition-colors duration-300 z-10"
             onClick={() => setActiveIndex(1)}
           >
-            <div className={`absolute top-[-40px]  flex justify-center items-center ${activeIndex === 1 ? 'text-orange-500' : 'text-blue-500'}`}>
+            <div className={`absolute top-[-40px] flex justify-center items-center ${activeIndex === 1 ? 'text-orange-500' : 'text-blue-500'}`}>
               <FaUsers size={50} />
             </div>
           </div>
@@ -79,36 +110,39 @@ const OurValues = () => {
         </div>
 
         {/* Right Side - Content Box */}
-        <div className="md:w-[1074px] w-[280px] h-auto  mt-10 md:mt-0 items-center md:mr-0">
+        <div className="md:w-[1074px] w-[280px] h-auto mt-10 md:mt-0 items-center md:mr-0">
           <div
             className="relative bg-gradient-to-r from-[#241F52] to-[#2F2568] text-white p-0 rounded-lg transition-all duration-500 ease-in-out shadow-lg"
             style={{
               height: '320px', 
               overflowY: 'auto', // Enable scrolling for smaller screen
               padding: '16px', // Ensure padding for the text
+              
             }} 
-            
           >
             {/* Description dynamically changes based on active index */}
-            <p className="md:text-xl text-[14px] leading-relaxed md:px-4 px-2"> {/* Added padding to text */}
+            <p className="md:text-lg text-[12px]  leading-relaxed font-regular md:px-8 px-8 text-center margin-top-[50px] md:mt-0"> {/* Adjusted padding, margin-top and font-size */}
               {values[activeIndex].description}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Media query for 480px */}
+      {/* Media queries for 1024px and 1440px screen sizes */}
       <style jsx>{`
-        @media (max-width: 480px) {
-          div[style*='height: 320px'] {
-            height: auto !important;
-            max-height: 300px; /* Ensure it doesn't expand too much */
-            overflow-y: scroll; /* Enable vertical scroll */
-            padding: 16px; /* Add padding for smaller frames */
+        @media (min-width: 1024px) {
+          p {
+            margin-top: 20px; /* Add margin-top for 1024px frame */
+          }
+        }
+
+        @media (min-width: 1440px) {
+          p {
+            margin-top: 30px; /* Add margin-top for 1440px frame */
           }
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 };
 

@@ -59,9 +59,9 @@ const Footer = () => {
           {/* Column 3: Contact Information */}
           <div className="space-y-4 text-center md:text-left">
             <h4 className="text-lg font-semibold">WhatsApp Us</h4>
-            <p className="text-[#f2980f]">+91 70430-73333</p>
+            <p className="text-[#f2980f] mt-5"><a href="#">+91 70430-73333</a></p>
             <h4 className="text-lg font-semibold">Email</h4>
-            <p className="text-[#f2980f]">krossfix.vcpl@gmail.com</p>
+            <p className="text-[#f2980f]"><a href="#">krossfix.vcpl@gmail.com</a></p>
           </div>
 
           {/* Column 4: Menu */}

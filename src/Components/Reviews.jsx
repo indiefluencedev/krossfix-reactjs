@@ -54,7 +54,7 @@ const TestimonialsCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 3,  // Show 3 cards on larger screens
     slidesToScroll: 1,
     centerMode: false,

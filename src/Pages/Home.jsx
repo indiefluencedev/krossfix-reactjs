@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion'; // Import framer-motion
 
 import Herosection from '../Components/Herosection';
 import HomeAbout from '../Components/HomeAbout';
@@ -8,49 +9,60 @@ import Gallery from '../Components/Gallery';
 import Reviews from '../Components/Reviews';
 import Queries from '../Components/Queries';
 
-
 const HomePage = () => {
-  const [isMobile, setIsMobile] = useState(null); // Use null initially to avoid premature rendering
+  const [isMobile, setIsMobile] = useState(null);
 
   useEffect(() => {
-    // Function to handle screen resizing and update isMobile state
     const handleResize = () => {
-      // Check if window is available (browser environment)
       if (typeof window !== 'undefined') {
-        setIsMobile(window.innerWidth <= 500); // Update based on screen width
+        setIsMobile(window.innerWidth <= 500);
       }
     };
 
-    // Call handleResize once to set the initial value
     handleResize();
-
-    // Listen to resize events
     window.addEventListener('resize', handleResize);
 
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  // Return null or loading indicator until the initial screen size is determined
   if (isMobile === null) {
-    return <div>Loading...</div>; // Optional loading state
+    return <div>Loading...</div>;
   }
+
+  // Fade-in animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
+  };
 
   return (
     <div>
-      <Herosection />
-      <HomeAbout />
-     
-       
+      {/* Apply fade-in animation to each section */}
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        <Herosection />
+      </motion.div>
 
-      {/* Conditionally render MobileHomeProducts or HomeProducts */}
-      {isMobile ? <MobileHomeProducts /> : <HomeProducts />}
-      <Gallery />
-      <Reviews /> 
-     <Queries/>
-      
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        <HomeAbout />
+      </motion.div>
+
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        {isMobile ? <MobileHomeProducts /> : <HomeProducts />}
+      </motion.div>
+
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        <Gallery />
+      </motion.div>
+
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        <Reviews />
+      </motion.div>
+
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        <Queries />
+      </motion.div>
     </div>
   );
 };
