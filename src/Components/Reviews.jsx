@@ -151,7 +151,15 @@ const TestimonialsCarousel = () => {
                   className="py-5"
                   style={{ transition: 'transform 0.5s' }}
                 >
-                  <div className="relative bg-white shadow-lg rounded-md overflow-hidden p-4" style={{ height: '430px', maxWidth: '300px', margin: '0 auto', marginBottom: '10px', borderRadius: '10px', boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)' }}>
+                  {/* <div className="relative bg-white shadow-lg rounded-md overflow-hidden p-4" style={{ height: '430px', maxWidth: '300px' , margin: '0 auto', marginBottom: '10px', borderRadius: '10px', boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)' }}> */}
+                  <div className="relative bg-white shadow-lg rounded-md overflow-hidden p-4 h-[430px] w-[300px] xl:w-[380px] lg:w-[300px]" // Adjust card width and height for 1440px only
+                    style={{
+                      margin: '0 auto',
+                      marginBottom: '10px',
+                      borderRadius: '10px',
+                      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
+                    }}
+                  >
                     <div className="text-orange-500 text-4xl mb-2 text-center">
                       <FaQuoteLeft />
                     </div>

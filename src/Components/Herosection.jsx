@@ -25,11 +25,11 @@ const Herosection = () => {
             style={{ backgroundImage: `url(${Background1})` }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-              <h2 className="text-3xl sm:text-3xl md:text-4xl mt-10 font-bold text-center mb-4">
+            <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-white px-4 md:px-16 lg:px-20"> {/* Adjust text alignment and padding */}
+              <h2 className="text-3xl sm:text-3xl md:text-4xl mt-10 font-bold mb-4 text-center md:text-left"> {/* Change text alignment */}
                 A range of smart waterproofing solutions
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-center mb-8">
+              <p className="text-base sm:text-lg md:text-xl mb-8 text-center md:text-left"> {/* Change text alignment */}
                 At Asian Paints, we offer the best waterproofing solutions.
               </p>
               <button className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-md font-bold flex items-center space-x-2">
@@ -49,11 +49,11 @@ const Herosection = () => {
             style={{ backgroundImage: `url(${Background2})` }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 mt-10">
+            <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-white px-4 md:px-16 lg:px-20"> {/* Adjust text alignment and padding */}
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 mt-10 text-center md:text-left"> {/* Change text alignment */}
                 Transform your space easily with DIY products
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-center mb-8">
+              <p className="text-base sm:text-lg md:text-xl mb-8 text-center md:text-left"> {/* Change text alignment */}
                 Asian Paints range of DIY products makes transformation easy.
               </p>
               <button className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-md font-bold flex items-center space-x-2">
@@ -73,11 +73,11 @@ const Herosection = () => {
             style={{ backgroundImage: `url(${Background3})` }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 mt-10">
+            <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-white px-4 md:px-16 lg:px-20"> {/* Adjust text alignment and padding */}
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 mt-10 text-center md:text-left"> {/* Change text alignment */}
                 A range of smart waterproofing solutions
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-center mb-8">
+              <p className="text-base sm:text-lg md:text-xl mb-8 text-center md:text-left"> {/* Change text alignment */}
                 At Asian Paints, we offer the best waterproofing solutions.
               </p>
               <button className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-md font-bold flex items-center space-x-2">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa'; // Use FaChevronDown for the dropdown icon
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '../../assets/Logo 1.png';
@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false); // State for dropdown
 
   const navigate = useNavigate(); // Initialize useNavigate
+  const location = useLocation(); // Get the current location
 
   // Toggle the mobile menu
   const handleMenuToggle = () => {
@@ -19,6 +20,12 @@ const Navbar = () => {
   const handleDropdownToggle = () => {
     setDropdownOpen(!isDropdownOpen);
   };
+
+  // Function to check if the current path matches the given path
+  const isActive = (path) => location.pathname === path;
+
+  // Function to check if the current path includes the given prefix
+  const isPrefixActive = (prefix) => location.pathname.startsWith(prefix);
 
   // Variants for Framer Motion
   const dropdownVariants = {
@@ -51,10 +58,20 @@ const Navbar = () => {
 
         {/* Navbar links (Desktop) */}
         <div className={`hidden md:flex md:items-center space-x-4 lg:space-x-10 `}>
-          <Link to="/" className="text-[#F49610] font-medium">
+          <Link
+            to="/"
+            className={`font-medium ${
+              isActive('/') ? 'text-orange-500' : 'text-[#20212F] hover:text-orange-500'
+            }`}
+          >
             Home
           </Link>
-          <Link to="/about" className="text-[#20212F]  hover:underline hover:text-orange-500 font-medium">
+          <Link
+            to="/about"
+            className={`font-medium ${
+              isActive('/about') ? 'text-orange-500' : 'text-[#20212F] hover:text-orange-500'
+            }`}
+          >
             About
           </Link>
 
@@ -62,7 +79,9 @@ const Navbar = () => {
           <div className="relative">
             <button
               onClick={handleDropdownToggle}
-              className="flex items-center text-[#20212F] hover:text-orange-500 font-medium"
+              className={`flex items-center font-medium ${
+                isPrefixActive('/products') ? 'text-orange-500' : 'text-[#20212F] hover:text-orange-500'
+              }`}
             >
               Products
               <motion.div
@@ -125,14 +144,18 @@ const Navbar = () => {
           <div className="flex flex-col items-start p-6">
             <Link
               to="/"
-              className="text-black hover:text-orange-500 py-2 text-lg w-full border-b border-gray-300 "
+              className={`py-2 text-lg w-full border-b border-gray-300 font-medium ${
+                isActive('/') ? 'text-orange-500' : 'text-black hover:text-orange-500'
+              }`}
               onClick={handleMenuToggle}
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="text-black hover:text-orange-500 py-2 text-lg w-full border-b border-gray-300"
+              className={`py-2 text-lg w-full border-b border-gray-300 font-medium ${
+                isActive('/about') ? 'text-orange-500' : 'text-black hover:text-orange-500'
+              }`}
               onClick={handleMenuToggle}
             >
               About
@@ -141,7 +164,9 @@ const Navbar = () => {
             <div className="py-2 w-full">
               <button
                 onClick={handleDropdownToggle}
-                className="flex justify-between items-center text-black hover:text-orange-500 w-full text-lg border-b border-gray-300 pb-2"
+                className={`flex justify-between items-center w-full text-lg border-b border-gray-300 pb-2 font-medium ${
+                  isPrefixActive('/products') ? 'text-orange-500' : 'text-black hover:text-orange-500'
+                }`}
               >
                 Products
                 <motion.div

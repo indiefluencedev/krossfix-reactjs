@@ -11,6 +11,8 @@
   font-weight: 700;
 }
 
+
+
 .timeline {
   position: relative;
   padding: 0;
@@ -29,17 +31,21 @@
   text-align: left;
   margin-right: 480px;
   position: relative;
+  /* padding-top: 5px; */
+  padding-bottom: 30px;
+  padding-left: 20px;
 }
 
 .timeline-item.right .timeline-box {
   text-align: right;
   margin-left: 480px;
   position: relative;
+  padding-bottom: 30px;
+  padding-right: 20px;
 }
 
 .timeline-box {
   background-color: rgb(226, 225, 225);
-  padding: 20px;
   border-radius: 5px;
   width: 400px; /* Standard width for 1440px */
   position: relative;
@@ -68,13 +74,14 @@
 
 .timeline-item.left .timeline-year {
   right: calc(100% - 500px);
-  margin-top: 283px;
+  margin-top: 265px;
+  margin-right: -80px;
 }
 
 .timeline-item.right .timeline-year {
   left: calc(100% - 500px);
-  margin-top: -120px;
-  margin-right: 200px;
+  margin-top: -115px;
+  margin-left: -80px;
 }
 
 .timeline-item.left .triangle-left {
@@ -127,19 +134,23 @@
   }
 
   .timeline-box {
-    padding: 20px;
+    padding: 10px;
   }
 
   .timeline-item.left .timeline-box {
     text-align: left;
-    margin-right: 440px;
+    margin-right: 450px;
     position: relative;
+    /* padding-bottom: 40px;
+    padding-left: 20px; */
   }
   
   .timeline-item.right .timeline-box {
     text-align: right;
-    margin-left: 440px;
+    margin-left: 450px;
     position: relative;
+    /* padding-bottom: 40px;
+    padding-right: 20px; */
   }
 
   .timeline-year {
@@ -152,13 +163,14 @@
 
   .timeline-item.left .timeline-year {
     right: calc(100% - 400px);
-    margin-top: 240px;
+    margin-top: 265px;
+    margin-right: -10px;
   }
   
   .timeline-item.right .timeline-year {
     left: calc(100% - 400px);
-    margin-top: -108px;
-    margin-right: 100px;
+    margin-top: -113px;
+    margin-left: -10px;
   }
 }
 
@@ -173,22 +185,26 @@
   .timeline-item.right .timeline-box {
     margin-left: 0;
     margin-right: 0;
-    width: 40%; /* Make text boxes narrower */
+    width: 50%; /* Make text boxes narrower */
   }
   
   .timeline-box {
-    padding: 20px;
+    padding: 10px;
+  }
+
+  .timeline-box p{
+    margin-top: 20px;
   }
 
   .timeline-item.left .timeline-box {
     text-align: left;
-    margin-right: 370px;
+    margin-right: 390px;
     position: relative;
   }
   
   .timeline-item.right .timeline-box {
     text-align: right;
-    margin-left: 370px;
+    margin-left: 390px;
     position: relative;
   }
 
@@ -202,13 +218,14 @@
 
   .timeline-item.left .timeline-year {
     right: calc(100% - 300px);
-    margin-top: 275px;
+    margin-top: 300px;
+    margin-right: 5px;
   }
   
   .timeline-item.right .timeline-year {
     left: calc(100% - 300px);
-    margin-top: -115px;
-    margin-right: 100px;
+    margin-top: -125px;
+    margin-left: 5px;
   }
 }
 
@@ -256,12 +273,14 @@
 
   .timeline-item.left .timeline-year {
     right: 50px; /* Adjust this value to align horizontally with the triangle */
-    top: -148px; /* Adjust this value to position vertically */
+    top: -157px; /* Adjust this value to position vertically */
+    margin-right: -10px;
   }
   
   .timeline-item.right .timeline-year {
     left: 50px; /* Adjust this value to align horizontally with the triangle */
-    top: 240px; /* Adjust this value to position vertically */
+    top: 263px; /* Adjust this value to position vertically */
+    margin-left: -10px;
   }
 
   .history-title {

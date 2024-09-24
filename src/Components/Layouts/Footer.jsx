@@ -4,7 +4,7 @@ import { FaFacebookF, FaLinkedinIn, FaArrowRight } from 'react-icons/fa'; // For
 
 const Footer = () => {
   return (
-    <footer className="bg-[#131C23] text-white py-8 w-full">
+    <footer className="bg-[#131C23] text-white pt-12 pb-8 w-full"> {/* Added more padding to the top */}
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12">
         {/* First Row: Logo and Contact Us */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-4 w-full">
@@ -20,7 +20,7 @@ const Footer = () => {
           <h1 className="hidden md:block text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-0 text-center md:text-left w-full">
             Shoe Adhesive Manufacturing
           </h1>
-          <a href="#contact" className="hidden md:flex items-center text-[#F19510] hover:text-[#f2980f] justify-center md:justify-end md:mr-10 whitespace-nowrap">
+          <a href="/contact" className="hidden md:flex items-center text-[#F19510] hover:text-[#f2980f] justify-center md:justify-end md:mr-10 whitespace-nowrap">
             Contact Us <FaArrowRight className="ml-2 rotate-45 " />
           </a>
         </div>
