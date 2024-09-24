@@ -3,7 +3,8 @@ import React from 'react';
 import Banner from '../Components/Banner'; // Adjust the path if necessary
 import InfoSection from '../Components/ProductsPages/InfoSection'; // Adjust the path if necessary
 import bannerImage from '../assets/productsimages/banner.png';
-import productImage from '../assets/productsimages/Products1.png';
+// import productImage from '../assets/productsimages/Products1.png';
+import ProductImage from '../assets/productsimages/Products1.png' 
 import TableComponent from '../Components/TableComponents'; // Adjust the path if necessary
 
 const Products2 = () => {
@@ -18,7 +19,7 @@ const Products2 = () => {
       {/* Info Section */}
       <div className="max-w-screen-xl mx-auto">
         <InfoSection
-          imageSrc={productImage}
+          imageSrc={ProductImage}
           title="Products 2"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula."
         />
