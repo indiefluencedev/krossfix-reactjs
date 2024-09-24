@@ -3,8 +3,7 @@ import React from 'react';
 import Banner from '../Components/Banner'; // Adjust the path if necessary
 import InfoSection from '../Components/ProductsPages/InfoSection'; // Adjust the path if necessary
 import bannerImage from '../assets/productsimages/banner.png';
-// import productImage from '../assets/productsimages/Products1.png';
-import ProductImage from '../assets/productsimages/Products1.png' 
+import ProductImage from '../assets/productsimages/Products.png' 
 import TableComponent from '../Components/TableComponents'; // Adjust the path if necessary
 
 const Products2 = () => {
