@@ -16,7 +16,7 @@ const Herosection = () => {
         loop={true}
         autoplay={{ delay: 4000 }}
         modules={[Autoplay]}
-        className="w-full h-96 md:h-[500px] lg:h-[550px]" // Maintain the height but ensure full width
+        className="w-full h-96 md:h-[500px] lg:h-[90vh]" // Maintain the height but ensure full width
       >
         {/* Slide 1 */}
         <SwiperSlide>
