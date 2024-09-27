@@ -3,10 +3,12 @@ import { motion } from 'framer-motion'; // Import framer-motion
 
 import Herosection from '../Components/Herosection';
 import HomeAbout from '../Components/HomeAbout';
-import HomeProducts from '../Components/HomeProducts';
-import MobileHomeProducts from '../Components/MobileHomeProducts';
+// import HomeProducts from '../Components/HomeProducts';
+// import MobileHomeProducts from '../Components/MobileHomeProducts';
+import ProductSection from '../Components/ProductSection';
 import Gallery from '../Components/Gallery';
 import Reviews from '../Components/Reviews';
+import ProductSlider from '../Components/ProductSlider';
 import Queries from '../Components/Queries';
 
 const HomePage = () => {
@@ -48,9 +50,12 @@ const HomePage = () => {
         <HomeAbout />
       </motion.div>
 
-      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+      {/* <motion.div initial="hidden" animate="visible" variants={fadeIn}>
         {isMobile ? <MobileHomeProducts /> : <HomeProducts />}
-      </motion.div>
+      </motion.div> */}
+
+    <ProductSection/>
+
 
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
         <Gallery />
@@ -58,6 +63,10 @@ const HomePage = () => {
 
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
         <Reviews />
+      </motion.div>
+
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        <ProductSlider />
       </motion.div>
 
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>

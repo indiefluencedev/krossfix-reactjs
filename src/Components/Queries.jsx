@@ -42,7 +42,7 @@ const Queries = () => {
       variants={containerVariants}
       className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-8"
     >
-      <h2 className="text-center text-xl sm:text-2xl font-bold my-8">
+      <h2 className="text-center text-xl md:text-3xl text-[#403b68] sm:text-2xl font-bold my-8">
         Got <span className="text-orange-500">Queries?</span> Get in Touch!
       </h2>
       
@@ -64,6 +64,15 @@ const Queries = () => {
         placeholder="Type your message here..."
         className="w-full p-4 border border-gray-300 rounded-md shadow-md h-40 mb-8"
       />
+
+      {/* Submit Button */}
+      <div className="text-center">
+        <button
+          className="bg-orange-500 text-white  font-semibold py-3 px-8 rounded-md hover:bg-orange-600 transition duration-300"
+        >
+          Submit
+        </button>
+      </div>
     </motion.div>
   );
 };

@@ -141,7 +141,7 @@ const TestimonialsCarousel = () => {
     >
       <div className='w-full md:px-4 lg:px-8 mx-auto'>
         <div className='w-full mx-auto mt-12 md:mt-16'>
-          <h2 className='text-2xl md:text-3xl font-bold text-center mb-8'>Reviews</h2>
+          <h2 className='text-2xl text-[#403b68] md:text-4xl font-bold text-center mb-8'>Reviews</h2>
           {/* Container with max-width for 1440px screens */}
           <div className='w-full mx-auto' style={{ maxWidth: '1240px' }}>
             <Slider {...settings} className="slider-with-margin">

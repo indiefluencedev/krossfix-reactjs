@@ -60,7 +60,7 @@ const OurValues = () => {
       transition={{ duration: 1, ease: 'easeInOut' }} // Fade-in animation
     >
       {/* Section Title */}
-      <h1 className="text-4xl font-bold text-center mb-8">Our Values</h1>
+      <h1 className="text-4xl text-[#403b68] font-bold text-center mb-8">Our Values</h1>
 
       {/* Flexbox to separate icons and content */}
       <div className="flex flex-col md:flex-row mx-auto justify-center items-start relative">

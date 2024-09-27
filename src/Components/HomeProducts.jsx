@@ -81,7 +81,7 @@ const HomeProducts = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold mb-6 text-center mt-16">Our Products</h2>
+      <h2 className="text-4xl text-[#403b68] font-bold mb-6 text-center mt-16">Our Products</h2>
       <div className="product-container desktop-view" style={containerStyle}>
         {products.map((product) => (
           <motion.div
