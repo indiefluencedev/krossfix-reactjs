@@ -147,23 +147,27 @@ const ProductSlider = () => {
               variants={productVariants}
               transition={{ delay: index * 0.2 }} // Staggered animation for each card
             >
-              <div className="relative bg-gray-300 p-8 rounded-lg shadow-lg border-t-4 border-transparent transition transform hover:-translate-y-2 hover:shadow-2xl  max-w-xs mx-auto h-[300px] flex flex-col justify-end items-center"> {/* Medium height */}
+              <div className="relative bg-gray-300 p-8 rounded-lg shadow-lg border-t-4 border-transparent transition transform hover:-translate-y-2 hover:shadow-2xl max-w-xs mx-auto h-[300px] flex flex-col justify-end items-center"> {/* Medium height */}
                 {/* Image inside the card */}
                 <img 
                   src={product.image} 
                   alt={product.name} 
-                  className="w-[200px] h-[450px] object-contain mt-20   " // Slightly larger image and positioned outside the card
+                  className="w-[200px] h-[450px] object-contain mt-20" // Slightly larger image and positioned outside the card
                   style={{ background: 'white' }} // Inline style for extra support
                 />
-                {/* Orange Box with Arrow */}
-                <div className="absolute bottom-4 right-4 bg-orange-500 w-14 h-14 flex items-center justify-center rounded">
+                {/* Updated Orange Box with New Arrow Icon */}
+                <div className="absolute bottom-4 right-4 bg-yellow-400 w-14 h-14  flex items-center justify-center rounded">
                   <svg 
-                    className="w-4 h-4 text-white" 
+                    className="w-6 h-6 text-black rotate-45" 
                     fill="currentColor" 
                     viewBox="0 0 20 20" 
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path fillRule="evenodd" d="M3.293 7.293a1 1 0 011.414 0L9 11.586l4.293-4.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414z" clipRule="evenodd" />
+                    <path 
+                      d="M5.293 12.707a1 1 0 011.414 0L12 7.414V16a1 1 0 102 0V7.414l5.293 5.293a1 1 0 001.414-1.414l-7-7a1 1 0 00-1.414 0l-7 7a1 1 0 000 1.414z" 
+                      clipRule="evenodd" 
+                      fillRule="evenodd" 
+                    />
                   </svg>
                 </div>
               </div>
