@@ -8,7 +8,7 @@ import HomeAbout from '../Components/HomeAbout';
 import ProductSection from '../Components/ProductSection';
 import Gallery from '../Components/Gallery';
 import Reviews from '../Components/Reviews';
-import ProductSlider from '../Components/ProductSlider';
+import ProductCardSlider from '../Components/ProductCardSlider';
 import Queries from '../Components/Queries';
 
 const HomePage = () => {
@@ -66,7 +66,7 @@ const HomePage = () => {
       </motion.div>
 
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-        <ProductSlider />
+        <ProductCardSlider />
       </motion.div>
 
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
