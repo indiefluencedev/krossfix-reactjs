@@ -196,7 +196,7 @@ const ProductSection = () => {
          }
         }
 
-         @media (max-width: 1440px) {
+         @media (min-width: 1440px) {
            .view-product-btn {
             display: flex;
             align-items: center;
@@ -214,6 +214,9 @@ const ProductSection = () => {
             transform: rotate(1deg);
             margin-left: auto;
           }
+            .view-product-btn:hover {
+            background-color: #ffff;
+            color: #000000;}
          }
 
         @media (max-width: 768px) {

@@ -34,7 +34,7 @@ const ProductCardSlider = () => {
     dots: true,
     infinite: true,
     speed: 1000,
-    slidesToShow: 4, // Display 5 cards at a time
+    slidesToShow: 4, // Display 4 cards at a time for larger screens
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -43,10 +43,12 @@ const ProductCardSlider = () => {
     beforeChange: (current, next) => setActiveIndex(next), // Update activeIndex before the slide changes
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // Adjust for 1024px frame
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2, // Show exactly 3 cards
           slidesToScroll: 1,
+          infinite: true,
+          dots: true,
         },
       },
       {
@@ -68,21 +70,25 @@ const ProductCardSlider = () => {
 
   return (
     <div className="bg-gray-100 py-12">
-      <h2 className="text-4xl text-[#403b68] font-bold mb-6 text-center">Our Products</h2>
+      <div className="text-center mb-8">
+        <h2 className="text-4xl font-bold text-[#403b68]">Top Selling Producs</h2>
+        {/* <p className="text-gray-600">Find the best products for your daily needs.</p> */}
+      </div>
+      
+      {/* Ensure slider max-width and centering */}
       <div className="max-w-[1440px] mx-auto">
         <Slider {...settings}>
           {products.map((product, index) => (
             <div key={product.id} className="p-2">
               {/* Ensure equal spacing between cards */}
               <div
-                className={`relative transition-all duration-700 ease-in-out bg-white rounded-lg shadow-md p-2 md:mx-20  mr-12 ml-10 ${ // Adjusted margin for equal spacing
+                className={`card_slide relative transition-all duration-700 ease-in-out bg-white rounded-lg shadow-md p-2 ${
                   index === activeIndex ? 'transform scale-105 z-20' : 'transform scale-90 z-10'
                 }`}
                 style={{
-                  width: index === activeIndex ? "300px" : "280px", // Adjusted sizes for all cards
+                  width: index === activeIndex ? "300px" : "260px", // Adjusted sizes for all cards
                   marginTop: index === activeIndex ? "0" : "190px",
                   height: index === activeIndex ? "450px" : "280px",
-                  visibility: index === activeIndex ? 'visible' : 'visible', // All cards visible
                 }}
               >
                 {/* Product image */}
@@ -95,7 +101,7 @@ const ProductCardSlider = () => {
                 {index === activeIndex && (
                   <div className="absolute bottom-6 mr-7 ml-5 bg-white p-4 rounded-lg shadow-lg">
                     <h3 className="text-xl font-semibold">{product.name}</h3>
-                    <p className="text-sm   text-gray-700">{product.description}</p>
+                    <p className="text-sm text-gray-700">{product.description}</p>
                   </div>
                 )}
               </div>
@@ -103,6 +109,38 @@ const ProductCardSlider = () => {
           ))}
         </Slider>
       </div>
+
+      {/* Media query styles */}
+      <style jsx>{`
+        @media (max-width: 1024px) {
+          .card_slide {
+            margin-left: 20px;
+            margin-right: 20px;
+          }
+        }
+
+        // @media (max-width: 768px) {
+        //   .card_slide {
+        //     margin-left: 100px;
+        //     margin-right: 100px;
+        //     justify-content:center;
+        //   }
+        // }
+
+        @media (max-width: 1440px) {
+          .card_slide {
+            margin-left: 100px;
+            margin-right: 20px;
+          }
+        }
+
+         @media (max-width: 480px) {
+          .card_slide {
+            margin-left: 55px;
+            // margin-right: 10px;
+          }
+        }
+      `}</style>
     </div>
   );
 };
