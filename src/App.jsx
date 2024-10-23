@@ -7,6 +7,8 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Products1 from './Pages/Products1';
 import Products2 from './Pages/Products2';
+import Products3 from './Pages/Products3';
+import Products4 from './Pages/Products4';
 import Footer from './Components/Layouts/Footer';
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/products/products1" element={<Products1 />} />
         <Route path="/products/products2" element={<Products2 />} />
+        <Route path="/products/products3" element={<Products3 />} />
+        <Route path="/products/products4" element={<Products4 />} />
       </Routes>
       <Footer/>
     </Router>

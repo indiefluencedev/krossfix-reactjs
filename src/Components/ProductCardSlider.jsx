@@ -71,7 +71,7 @@ const ProductCardSlider = () => {
   return (
     <div className="bg-gray-100 py-12">
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold text-[#403b68]">Top Selling Producs</h2>
+        <h2 className="text-4xl font-bold text-[#403b68]">Top Selling Products</h2>
         {/* <p className="text-gray-600">Find the best products for your daily needs.</p> */}
       </div>
       

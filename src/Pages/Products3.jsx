@@ -12,14 +12,14 @@ const Products2 = () => {
       {/* Banner Section */}
       <Banner
         imageSrc={bannerImage}
-        text="Water based adhesive"
+        text="Thermoplastic hotmelt adhesive "
       />
       
       {/* Info Section */}
       <div className="max-w-screen-xl mx-auto">
         <InfoSection
           imageSrc={ProductImage}
-          title="Water based adhesive"
+          title="Thermoplastic hotmelt adhesive "
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula."
         />
 

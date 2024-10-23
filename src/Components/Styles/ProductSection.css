@@ -1,0 +1,279 @@
+.product-number {
+    transition: opacity 0.3s ease;
+  }
+
+  .product-block {
+    border: none; /* Removes any border that might be causing the lines */
+    box-shadow: none; /* Ensures there's no shadow that might look like a border */
+    margin: 0; /* Removes any margin between blocks */
+    padding: 0; /* Ensures no extra padding is affecting layout */
+  }  
+
+  /* Make number invisible when hovering on product and visible only on button hover */
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .product-block:hover .product-number {
+      opacity: 0;
+    }
+    .view-product-btn:hover ~ .product-number {
+      opacity: 1 !important;
+    }
+    .product-block {
+        border: none; /* Also apply no border for larger screen sizes */
+        box-shadow: none;
+      }
+  }
+
+  /* Ensure image fades on hover and the number stays hidden */
+  .product-block:hover .product-image {
+    opacity: 0.8;
+  }
+
+  /* Keep "View More" button style intact */
+  .view-product-btn {
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 2px solid white;
+  }
+
+  .view-product-btn:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .description {
+    font-size: 14px;
+    color: rgb(194, 192, 192);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+  }
+
+  .product-name {
+    font-size: 22px;
+    
+  }
+
+  /* For smaller frames (768px, 480px), retain the original layout and behavior */
+  @media (max-width: 1024px)  {
+    .view-product-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+      border: 2px solid white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: transparent;
+      width: 140px;
+      flex-direction: row;
+      text-align: center;
+    }
+    .arrow-icon {
+      transform: rotate(10deg);
+      margin-left: auto;
+    }
+
+    .product-block {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .product-name {
+        font-size: 24px;
+        margin-left: 50px;
+        margin-right: 5px;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+    
+      .description {
+        font-size: 14px;
+        color: rgb(194, 192, 192);
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 8px;
+      }
+
+      .product-block {
+        border: none; /* Also apply no border for larger screen sizes */
+        box-shadow: none;
+      }
+
+    /* .flex.flex-col.h-[500px] {
+      border: none !important;
+      box-shadow: none !important;
+    } */
+  }
+
+  @media (min-width: 1440px) {
+    .view-product-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+      border: 2px solid white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: transparent;
+      width: 140px;
+      flex-direction: row;
+      text-align: center;
+    }
+    .arrow-icon {
+      transform: rotate(1deg);
+      margin-left: auto;
+    }
+
+    .view-product-btn:hover {
+      background-color: #ffff;
+      color: #000000;
+    }
+
+    .product-block {
+        border: none; /* Also apply no border for larger screen sizes */
+        box-shadow: none;
+      }
+  }
+
+  @media (max-width: 768px) {
+    .view-product-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+      border: 2px solid white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: transparent;
+      width: 140px;
+      flex-direction: row;
+      text-align: center;
+      margin-bottom: 20px; /* Space between button and the content below */
+    }
+
+    .arrow-icon {
+      transform: rotate(1deg);
+      margin-left: auto;
+    }
+
+    .product-number {
+      display: none; /* Hide product number for 768px and smaller screens */
+    }
+
+    .product-block {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px; /* Increased padding for spacing */
+      text-align: center;
+      margin: 0 auto;
+      height: auto; /* Ensure the height adjusts dynamically */
+      position: relative; /* Important to position image behind text */
+    }
+
+    .product-name {
+      margin-top: 10px; /* Reduced margin */
+      z-index: 30; /* Ensure the text stays above the image */
+      color: #fff; /* Make text white for better readability */
+      position: relative;
+      font-size: 40px;
+      margin-right: 40px;
+    }
+
+    .description {
+        font-size: 22px;
+    }
+
+    .larger-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; /* Fill the block */
+      z-index: 1; /* Move the image behind the text */
+      object-fit: cover; /* Ensure the image covers the block area */
+      opacity: 0.5; /* Add transparency to the image so the text is more visible */
+    }
+
+    .no-opacity {
+      opacity: 1 !important;
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    .view-product-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+      border: 2px solid white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: transparent;
+      width: 140px;
+      flex-direction: row;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .arrow-icon {
+      transform: rotate(1deg);
+      margin-left: auto;
+    }
+
+    .product-number {
+      display: none; /* Hide product number for 480px and smaller screens */
+    }
+
+    .product-block {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 10px;
+      text-align: center;
+      margin: 0 auto;
+      height: auto;
+      position: relative; /* Important to position image behind text */
+    }
+
+    .product-block p {
+      margin-top: 10px;
+      z-index: 10; /* Ensure the text stays above the image */
+      color: #fff; /* Make text white for better readability */
+      position: relative;
+    }
+
+    .larger-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; /* Fill the block */
+      z-index: 1; /* Move the image behind the text */
+      object-fit: cover; /* Ensure the image covers the block area */
+      opacity: 0.5; /* Add transparency to the image so the text is more visible */
+    }
+
+    .product-name {
+        font-size: 30px;
+    }
+
+    .no-opacity {
+      opacity: 1 !important;
+    }
+}
+
+ .product-block:hover .product-number {
+    opacity: 0;
+  }
+  .product-number {
+    transition: opacity 0.3s ease;
+  }
+  
