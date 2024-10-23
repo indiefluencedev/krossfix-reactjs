@@ -118,7 +118,7 @@ const OurTeam = () => {
       className="text-center py-10"
     >
       <div className="max-w-[1240px] mx-auto px-4">
-        <h2 className="text-3xl font-bold md:mb-5 lg:mb-10">Our Team</h2>
+        <h2 className="text-4xl text-[#403b68] font-bold md:mb-5 lg:mb-10">Our Team</h2>
 
         {/* Carousel for 480px and 768px */}
         {isMobile ? (

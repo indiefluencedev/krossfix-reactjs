@@ -4,58 +4,85 @@ import { FaLightbulb, FaBullseye } from 'react-icons/fa'; // Icons from react-ic
 import AboutImage from '../assets/image8.png'; // About Us Image
 
 const HomeAbout = () => {
-  const [activeTab, setActiveTab] = useState('vision'); // Set "vision" as the default active tab
-  const [isInView, setIsInView] = useState(false);
-  const aboutRef = useRef(null);
+  const [activeTab, setActiveTab] = useState('vision'); // State for controlling the active tab
+  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [isImageVisible, setIsImageVisible] = useState(false);
+  const textRef = useRef(null);
+  const imageRef = useRef(null);
 
+  // Function to toggle between 'vision' and 'mission' tabs
   const toggleContent = (tab) => {
-    setActiveTab(tab); // Set the active tab to 'vision' or 'mission'
+    setActiveTab(tab);
   };
 
-  // Intersection Observer to detect visibility
+  // Use Intersection Observer to detect when the text and image are visible
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const textObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.unobserve(entry.target);
+          setIsTextVisible(true);
+          textObserver.unobserve(entry.target); // Stop observing once it's visible
         }
       },
       {
-        threshold: 0.2, // Trigger when 20% of the component is visible
+        threshold: 0.5, // Trigger when 30% of the text component is visible
       }
     );
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
+    const imageObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsImageVisible(true);
+          imageObserver.unobserve(entry.target); // Stop observing once it's visible
+        }
+      },
+      {
+        threshold: 0.5, // Trigger when 30% of the image component is visible
+      }
+    );
+
+    if (textRef.current) {
+      textObserver.observe(textRef.current);
+    }
+
+    if (imageRef.current) {
+      imageObserver.observe(imageRef.current);
     }
 
     return () => {
-      if (aboutRef.current) {
-        observer.unobserve(aboutRef.current);
+      if (textRef.current) {
+        textObserver.unobserve(textRef.current);
+      }
+      if (imageRef.current) {
+        imageObserver.unobserve(imageRef.current);
       }
     };
   }, []);
 
-  // Animation variants for fade-in effect
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  // Animation variants for the text and image
+  const textVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1.5, ease: "easeOut" } },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1.5, ease: "easeOut" } },
   };
 
   return (
-    <motion.div
-      ref={aboutRef}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={containerVariants}
-      className="w-full max-w-screen-xl mx-auto px-4 lg:px-12 py-8 sm:py-12"
-    >
+    <div className="w-full max-w-screen-xl mx-auto px-4 lg:px-12 py-8 sm:py-12">
       {/* About Us Section */}
       <section className="flex flex-col lg:flex-row items-center justify-between">
         {/* Text Content */}
-        <div className="lg:w-1/2 text-left mb-10 lg:mb-0">
-          <h2 className="text-3xl font-bold mb-6">About Us</h2>
+        <motion.div
+          ref={textRef}
+          className="lg:w-1/2 text-left mb-10 lg:mb-0"
+          initial="hidden"
+          animate={isTextVisible ? 'visible' : 'hidden'}
+          variants={textVariants}
+        >
+          <h2 className="text-4xl text-[#403b68] font-bold mb-6">About Us</h2>
           <p className="text-lg mb-4">
             Super Bond Adhesives, a leading adhesive manufacturing company with a rich history spanning over{' '}
             <span className='text-[#f97316] font-semibold'>four decades</span>.
@@ -156,18 +183,24 @@ const HomeAbout = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Image with gap */}
-        <div className="lg:w-1/2 lg:ml-12  md:mt-10 mt-5 lg:mt-0">
+        <motion.div
+          ref={imageRef}
+          className="lg:w-1/2 lg:ml-12  md:mt-10 mt-5 lg:mt-0"
+          initial="hidden"
+          animate={isImageVisible ? 'visible' : 'hidden'}
+          variants={imageVariants}
+        >
           <img
             src={AboutImage}
             alt="Factory Image"
             className="w-full max-h-[653px]  h-auto shadow-lg object-cover"
           />
-        </div>
+        </motion.div>
       </section>
-    </motion.div>
+    </div>
   );
 };
 

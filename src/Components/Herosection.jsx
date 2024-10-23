@@ -3,9 +3,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
-import Background1 from '../assets/paint.jpg'; // Replace with actual path
-import Background2 from '../assets/box.jpg';   // Replace with actual path
-import Background3 from '../assets/image 16.png'; // Replace with actual path
+import Background1 from '../assets/productsimages/7mockupkrossfix.png'; // Replace with actual path
+import Background2 from '../assets/productsimages/8mockupkrossfix.png';   // Replace with actual path
+import Background3 from '../assets/productsimages/9mockupkrossfix.png'; // Replace with actual path
 
 const Herosection = () => {
   return (
@@ -24,7 +24,7 @@ const Herosection = () => {
             className="h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${Background1})` }}
           >
-            <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-30"></div>
             <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-white px-4 md:px-16 lg:px-20"> {/* Adjust text alignment and padding */}
               <h2 className="text-3xl sm:text-3xl md:text-4xl mt-10 font-bold mb-4 text-center md:text-left"> {/* Change text alignment */}
                 A range of smart waterproofing solutions
@@ -48,7 +48,7 @@ const Herosection = () => {
             className="h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${Background2})` }}
           >
-            <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-30"></div>
             <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-white px-4 md:px-16 lg:px-20"> {/* Adjust text alignment and padding */}
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 mt-10 text-center md:text-left"> {/* Change text alignment */}
                 Transform your space easily with DIY products

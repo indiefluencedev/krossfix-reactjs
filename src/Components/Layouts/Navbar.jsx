@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa'; // Use FaChevronDown for the dropdown icon
 import { motion, AnimatePresence } from 'framer-motion';
@@ -10,6 +10,10 @@ const Navbar = () => {
 
   const navigate = useNavigate(); // Initialize useNavigate
   const location = useLocation(); // Get the current location
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page on every location change
+  }, [location.pathname]); // Dependency on location's pathname
 
   // Toggle the mobile menu
   const handleMenuToggle = () => {

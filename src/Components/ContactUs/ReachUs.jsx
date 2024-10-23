@@ -19,7 +19,7 @@ const ReachUs = () => {
         <div className="relative z-10 max-w-[1240px] mx-auto flex flex-col md:flex-row justify-between items-start px-6 md:px-12">
           {/* Left Side - Contact Info */}
           <div className="w-full md:w-1/2 mb-10 md:mb-0">
-            <h2 className="text-5xl font-bold mb-6">Reach Us</h2>
+            <h2 className="text-4xl text-[#403b68] font-bold mb-6">Reach Us</h2>
             <p className="text-gray-600 mb-4 text-lg">
               <strong>Our page is the perfect place for you to get in touch with us! Our page is the perfect place for you to get in touch with us!</strong>
               <br /> <br />
