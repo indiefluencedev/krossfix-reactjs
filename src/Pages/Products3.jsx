@@ -12,19 +12,21 @@ const Products2 = () => {
       {/* Banner Section */}
       <Banner
         imageSrc={bannerImage}
-        text="Thermoplastic hotmelt adhesive "
+        text="Primers "
       />
       
       {/* Info Section */}
       <div className="max-w-screen-xl mx-auto">
         <InfoSection
           imageSrc={ProductImage}
-          title="Thermoplastic hotmelt adhesive "
+          title="Primers "
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula."
         />
 
         {/* Table Component with selectedProduct prop */}
-        <TableComponent selectedProduct="Product 2" /> {/* Pass 'Product 1' as the selected product */}
+        <TableComponent selectedProduct="Product 8" /> {/* Pass 'Product 1' as the selected product */}
+         <TableComponent selectedProduct="Product 9" /> {/* Pass 'Product 1' as the selected product */}
+
       </div>
     </div>
   );

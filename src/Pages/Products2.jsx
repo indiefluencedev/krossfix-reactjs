@@ -12,19 +12,27 @@ const Products2 = () => {
       {/* Banner Section */}
       <Banner
         imageSrc={bannerImage}
-        text="Water based adhesive"
+        text="Adhesive"
       />
       
       {/* Info Section */}
       <div className="max-w-screen-xl mx-auto">
         <InfoSection
           imageSrc={ProductImage}
-          title="Water based adhesive"
+          title="Adhesive"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula."
         />
 
         {/* Table Component with selectedProduct prop */}
         <TableComponent selectedProduct="Product 2" /> {/* Pass 'Product 1' as the selected product */}
+         <TableComponent selectedProduct="Product 3" /> {/* Pass 'Product 1' as the selected product */}
+         <TableComponent selectedProduct="Product 4" /> {/* Pass 'Product 1' as the selected product */}
+          <TableComponent selectedProduct="Product 5" /> {/* Pass 'Product 1' as the selected product */}
+          <TableComponent selectedProduct="Product 6" /> {/* Pass 'Product 1' as the selected product */}
+          <TableComponent selectedProduct="Product 7" /> {/* Pass 'Product 1' as the selected product */}
+           <TableComponent selectedProduct="Hotmelt Adhesives" /> {/* Pass 'Product 1' as the selected product */}
+
+
       </div>
     </div>
   );

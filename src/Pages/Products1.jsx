@@ -12,18 +12,19 @@ const Products1 = () => {
       {/* Banner Section */}
       <Banner
         imageSrc={bannerImage}
-        text="Solvent Based Cleaner"
+        text="Cleaner"
       />
       
       {/* Info Section */}
       <div className="max-w-screen-xl mx-auto">
         <InfoSection
           imageSrc={productImage}
-          title="Solvent Based Cleaners"
+          title=" Cleaners"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula."
         />
 
         {/* Table Component with selectedProduct prop */}
+        
         <TableComponent selectedProduct="Product 1" /> {/* Pass 'Product 1' as the selected product */}
       </div>
     </div>
