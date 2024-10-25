@@ -49,28 +49,28 @@ const ProductSection = () => {
   const products = [
     {
       id: 1,
-      name: 'Water based adhesive',
+      name: 'Cleaner',
       description: 'This is the description for Water based adhesive',
       image: bottle1,
       link: '/products/products1'
     },
     {
       id: 2,
-      name: 'Solvent based adhesive',
+      name: 'Adhesive',
       description: 'This is the description for Solvent based adhesive',
       image: bottle2,
       link: '/products/products2'
     },
     {
       id: 3,
-      name: 'Thermoplastic hotmelt adhesive',
+      name: 'Primers',
       description: 'This is the description for Thermoplastic hotmelt adhesive',
       image: bottle3,
       link: '/products/products3' // Change to the actual product link later
     },
     {
       id: 4,
-      name: 'PU reactive hotmelt adhesive',
+      name: 'Hardener',
       description: 'This is the description for PU reactive hotmelt adhesive',
       image: bottle4,
       link: '/products/products4' // Change to the actual product link later

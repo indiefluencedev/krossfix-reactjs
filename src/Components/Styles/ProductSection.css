@@ -44,16 +44,20 @@
 
   .description {
     font-size: 14px;
-    color: rgb(194, 192, 192);
+    color: rgb(220, 217, 217);
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 10px;
   }
 
   .product-name {
-    font-size: 22px;
+    font-size: 36px;
     
   }
+
+
+  /* Apply changes only to screens 1024px and above (including 1440px) */
+
 
   /* For smaller frames (768px, 480px), retain the original layout and behavior */
   @media (max-width: 1024px)  {
@@ -81,9 +85,9 @@
     }
 
     .product-name {
-        font-size: 24px;
-        margin-left: 50px;
-        margin-right: 5px;
+        font-size: 36px;
+        /* margin-left: 50px;
+        margin-right: 5px; */
         align-items: center !important;
         justify-content: center !important;
       }
@@ -91,10 +95,10 @@
     
       .description {
         font-size: 14px;
-        color: rgb(194, 192, 192);
+        color: rgb(220, 217, 217);
         margin-left: 20px;
         margin-right: 20px;
-        margin-top: 8px;
+        margin-top: 10px;
       }
 
       .product-block {
@@ -180,8 +184,8 @@
       z-index: 30; /* Ensure the text stays above the image */
       color: #fff; /* Make text white for better readability */
       position: relative;
-      font-size: 40px;
-      margin-right: 40px;
+      font-size: 50px;
+      /* margin-right: 40px; */
     }
 
     .description {
@@ -262,7 +266,7 @@
     }
 
     .product-name {
-        font-size: 30px;
+        font-size: 50px;
     }
 
     .no-opacity {
@@ -276,4 +280,7 @@
   .product-number {
     transition: opacity 0.3s ease;
   }
+  
+
+
   
