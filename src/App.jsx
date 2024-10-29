@@ -7,7 +7,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import ProductPage from './Pages/ProductPage';
 
-// Import images directly
+
 import banner1 from './assets/productsimages/banner.png';
 import banner2 from './assets/productsimages/banner.png';
 import banner3 from './assets/productsimages/banner.png';
@@ -77,3 +77,6 @@ function App() {
 }
 
 export default App;
+
+
+// updates cross check done status all ok 
