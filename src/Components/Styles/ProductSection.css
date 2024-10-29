@@ -277,6 +277,7 @@
  .product-block:hover .product-number {
     opacity: 0;
   }
+  
   .product-number {
     transition: opacity 0.3s ease;
   }

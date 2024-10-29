@@ -1,32 +1,77 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Layouts/Navbar';  // Import the Navbar
-
-import Home from './Pages/Home';       //Import page components
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
+import Navbar from './Components/Layouts/Navbar';
+import Footer from './Components/Layouts/Footer';
+import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
-import Products1 from './Pages/Products1';
-import Products2 from './Pages/Products2';
-import Products3 from './Pages/Products3';
-import Products4 from './Pages/Products4';
-import Footer from './Components/Layouts/Footer';
+import ProductPage from './Pages/ProductPage';
+
+// Import images directly
+import banner1 from './assets/productsimages/banner.png';
+import banner2 from './assets/productsimages/banner.png';
+import banner3 from './assets/productsimages/banner.png';
+import banner4 from './assets/productsimages/banner.png';
+
+import product1 from'./assets/productsimages/products.png';
+import product2 from './assets/productsimages/products.png';
+import product3 from './assets/productsimages/products.png';
+import product4 from './assets/productsimages/products.png';
+
+// Product-specific data to pass to ProductPage
+const productInfo = {
+  "products1": {
+    bannerImage: banner1,
+    title: "Cleaner",
+    description: "Description for Cleaner...",
+    selectedProduct: "Cleaner",
+    imageSrc: product1
+  },
+  "products2": {
+    bannerImage: banner2,
+    title: "Adhesive",
+    description: "Description for Adhesive...",
+    selectedProduct: "Adhesive",
+    imageSrc: product2
+  },
+  "products3": {
+    bannerImage: banner3,
+    title: "Primer",
+    description: "Description for Primer...",
+    selectedProduct: "Primer",
+    imageSrc: product3
+  },
+  "products4": {
+    bannerImage: banner4,
+    title: "Hardener",
+    description: "Description for Hardener...",
+    selectedProduct: "Hardener",
+    imageSrc: product4
+  },
+};
+
+function DynamicProductPage() {
+  const { productType } = useParams();
+  const productData = productInfo[productType];
+
+  return productData ? (
+    <ProductPage {...productData} />
+  ) : (
+    <div>Product not found</div>
+  );
+}
 
 function App() {
   return (
     <Router>
-      {/* Navbar will appear on all pages */}
       <Navbar />
       <Routes>
-        {/* Define the routes for each page */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/products/products1" element={<Products1 />} />
-        <Route path="/products/products2" element={<Products2 />} />
-        <Route path="/products/products3" element={<Products3 />} />
-        <Route path="/products/products4" element={<Products4 />} />
+        <Route path="/products/:productType" element={<DynamicProductPage />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }

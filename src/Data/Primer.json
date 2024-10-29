@@ -1,0 +1,140 @@
+{
+    "Primers": [
+      {
+        "Product Code": "PrimeX 006* / 006D*",
+        "Use": "Rubber / TPR Primer",
+        "Appearance": "Colorless Transparent Liquid",
+        "Viscosity": "N.A.",
+        "Characteristics": "Excellent Priming Result",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "PrimeX 007* / 007D*",
+        "Use": "Rubber / TPR Primer",
+        "Appearance": "Colorless Transparent Liquid",
+        "Viscosity": "N.A.",
+        "Characteristics": "Excellent Priming Result",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix 211P",
+        "Use": "Primer For TPU / PVC Embossing",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "500-700",
+        "Characteristics": "Excellent Penetration",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix 234P",
+        "Use": "Primer For Difficult To Bond Substrate",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "1000-1200",
+        "Characteristics": "Excellent Cohesion",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix 236P",
+        "Use": "Primer For Leather Goods",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "400-600",
+        "Characteristics": "Increase Adhesion On Oily Leather",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix 311P",
+        "Use": "Re-Enforcement Primer",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "600-800",
+        "Characteristics": "Interfacial Cohesion",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix 511P",
+        "Use": "TPU Primer",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "600-800",
+        "Characteristics": "Excellent Results On Difficult To Bond Substrate",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix 811B",
+        "Use": "Primer For Hard EVA / Phylon / TPU",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "N.A.",
+        "Characteristics": "Excellent Results On Hard Phylon",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix 1732",
+        "Use": "Nylon / Pebax Primer",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "400-600",
+        "Characteristics": "Improved Bonding",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix P 13 / P 14",
+        "Use": "Printing Primer",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "N.A.",
+        "Characteristics": "Excellent Priming Effect, Anti Rubbing",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix P 21",
+        "Use": "EVA / Phylon Primer",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "N.A.",
+        "Characteristics": "Excellent Priming Effect, Strong Bonding Results",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix P 1008",
+        "Use": "Printing Primer",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "N.A.",
+        "Characteristics": "Excellent Priming Effect",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix P 2010",
+        "Use": "EVA / Phylon Primer",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "N.A.",
+        "Characteristics": "Effectively Remove Dirt & Release Agent On The Surface",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix UV 72",
+        "Use": "UV Primer For Phylon",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "N.A.",
+        "Characteristics": "Excellent Priming Effect, Non-Yellowing",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "KrossFix UV 76",
+        "Use": "UV Primer For Phylon",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "N.A.",
+        "Characteristics": "Excellent Priming Effect",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "PrimeX 205WB",
+        "Use": "Rubber Primer",
+        "Appearance": "Light Red Translucent",
+        "Viscosity": "N.A.",
+        "Characteristics": "Effective Chlorination",
+        "Type": "Water Based Primer"
+      },
+      {
+        "Product Code": "PrimeX 405WB",
+        "Use": "PU / TPU / Phylon etc.",
+        "Appearance": "Milky White Opaque",
+        "Viscosity": "800-1200",
+        "Characteristics": "Reinforcement Primer",
+        "Type": "Water Based Primer"
+      }
+    ]
+  }

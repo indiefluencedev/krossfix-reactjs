@@ -1,0 +1,236 @@
+{
+    "Adhesive": [
+      {
+        "Product Code": "KrossFix SR 509",
+        "Use": "General Application / Fabrication",
+        "Appearance": "Brownish",
+        "Viscosity": "2000-3000",
+        "Characteristics": "Very Good Initial Bonding, Good Brushability",
+        "Type": "Solvent Based CR Adhesives"
+      },
+      {
+        "Product Code": "KrossFix SR 510",
+        "Use": "Leather Shoe / Lasting",
+        "Appearance": "Brownish",
+        "Viscosity": "2500-3500",
+        "Characteristics": "Good Heat Resistance, Excellent Performance",
+        "Type": "Solvent Based CR Adhesives"
+      },
+      {
+        "Product Code": "KrossFix SR 6800",
+        "Use": "General Shoe Making",
+        "Appearance": "Light Yellowish",
+        "Viscosity": "2000-3000",
+        "Characteristics": "Strong Cohesive Force, Easy workability",
+        "Type": "Solvent Based CR Adhesives"
+      },
+      {
+        "Product Code": "KrossFix SR 8000",
+        "Use": "General Shoe Making",
+        "Appearance": "Light Yellowish",
+        "Viscosity": "3000-4500",
+        "Characteristics": "Good Bond Strength Resistance to Discoloration",
+        "Type": "Solvent Based CR Adhesives"
+      },
+      {
+        "Product Code": "KrossFix SR 8850",
+        "Use": "Upper Making / Stiching /padding",
+        "Appearance": "Light Yellowish",
+        "Viscosity": "2500-4000",
+        "Characteristics": "Smooth Applicability, Long Tack Retention",
+        "Type": "Solvent Based CR Adhesives"
+      },
+      {
+        "Product Code": "KrossFix SR 20N",
+        "Use": "Leather Goods",
+        "Appearance": "Light Yellowish",
+        "Viscosity": "180-220",
+        "Characteristics": "Good Bond Strength ,Excellent Performance",
+        "Type": "Solvent Based CR Adhesives"
+      },
+      {
+        "Product Code": "SprayFix 35",
+        "Use": "Foam / Foam",
+        "Appearance": "Light Yellowish",
+        "Viscosity": "110-130",
+        "Characteristics": "Very Good Sprayability",
+        "Type": "Solvent Based CR Adhesives"
+      },
+      {
+        "Product Code": "SprayFix 40",
+        "Use": "Mattress",
+        "Appearance": "Light Yellowish",
+        "Viscosity": "120-150",
+        "Characteristics": "Strong Bonding",
+        "Type": "Solvent Based CR Adhesives"
+      },
+      {
+        "Product Code": "KrossFix 400",
+        "Use": "Strap Making",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "400-800",
+        "Characteristics": "Easy Application, Good Bonding Strength",
+        "Type": "Solvent Based PU Adhesives"
+      },
+      {
+        "Product Code": "KrossFix 555",
+        "Use": "Dress Shoes/Retail",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "1000-1500",
+        "Characteristics": "Very Good Initial Bonding,Smooth Application",
+        "Type": "Solvent Based PU Adhesives"
+      },
+      {
+        "Product Code": "KrossFix 888",
+        "Use": "Retail Market",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "600-1000",
+        "Characteristics": "Very Good Initial Bonding, Smooth Application",
+        "Type": "Solvent Based PU Adhesives"
+      },
+      {
+        "Product Code": "KrossFix 1800L",
+        "Use": "Sports Shoes / Sneakers",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "1500-2000",
+        "Characteristics": "High Bonding Strength, High Heat Resistance , Very good brushability",
+        "Type": "Solvent Based PU Adhesives"
+      },
+      {
+        "Product Code": "KrossFix 1800/1800N",
+        "Use": "Sports Shoes / Sneakers",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "1500-2000",
+        "Characteristics": "High Bonding Strength non - yellowing High Heat Resistance , Very good brushability",
+        "Type": "Solvent Based PU Adhesives"
+      },
+      {
+        "Product Code": "KrossFix 2000N",
+        "Use": "Sports Shoes / Sneakers",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "1600-2200",
+        "Characteristics": "High Bonding Strength excellent non - yellowing High Heat Resistance , Very good brushability",
+        "Type": "Solvent Based PU Adhesives"
+      },
+      {
+        "Product Code": "KrossFix 2200",
+        "Use": "Sports Shoes / Sneakers",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "1600-2200",
+        "Characteristics": "High Bonding Strength, High Heat Resistance",
+        "Type": "Solvent Based PU Adhesives"
+      },
+      {
+        "Product Code": "KrossFix 2700",
+        "Use": "Sports Shoes / Sneakers",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "1800-2400",
+        "Characteristics": "High Bonding Strength, High Heat Resistance ,High Hydrolysis Resistance",
+        "Type": "Solvent Based PU Adhesives"
+      },
+      {
+        "Product Code": "KrossFix 8100/8100L",
+        "Use": "Dress Shoe",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "1500-2000",
+        "Characteristics": "High Bonding Strength, Fast Drying , Very Good Brushability",
+        "Type": "Solvent Based PU Adhesives"
+      },
+      {
+        "Product Code": "KrossFix 8200",
+        "Use": "Sports Shoes / Sneakers",
+        "Appearance": "Colorless Translucent",
+        "Viscosity": "1800-2400",
+        "Characteristics": "High Bonding Strength, High Heat Resistance ,Very Good Brushability",
+        "Type": "Solvent Based PU Adhesives"
+      },
+      {
+        "Product Code": "AquaFix 210",
+        "Use": "Foam to Foam Bonding",
+        "Appearance": "Milky White Opaque",
+        "Viscosity": "100-400",
+        "Characteristics": "Good Bonding, Sprayable",
+        "Type": "Water Based CR Adhesive"
+      },
+      {
+        "Product Code": "AquaFix 2210",
+        "Use": "Upper Making",
+        "Appearance": "Milky White Opaque",
+        "Viscosity": "10000-14000",
+        "Characteristics": "Suitable For Edge Folding, Low Discoloration",
+        "Type": "Water Based CR Adhesive"
+      },
+      {
+        "Product Code": "AquaFix 222",
+        "Use": "Foam to Fabric Lamination",
+        "Appearance": "Milky White Opaque",
+        "Viscosity": "6000-9000",
+        "Characteristics": "Good Bonding Strength",
+        "Type": "Acrylic Emulsion Based Adhesive"
+      },
+      {
+        "Product Code": "AquaFix 223",
+        "Use": "Foam to Fabric Lamination",
+        "Appearance": "Milky White Opaque",
+        "Viscosity": "6000-9000",
+        "Characteristics": "Good Strength, Water Resistance",
+        "Type": "Acrylic Emulsion Based Adhesive"
+      },
+      {
+        "Product Code": "AquaFix 3200",
+        "Use": "Canvas / Synthetic Leather",
+        "Appearance": "Milky White Opaque",
+        "Viscosity": "3000-5000",
+        "Characteristics": "Outstanding Bond Strength, Water Resistance",
+        "Type": "NR Latex Based Adhesive"
+      },
+      {
+        "Product Code": "KrossFix 400",
+        "Use": "Canvas / Vulcanization",
+        "Appearance": "Milky White Opaque",
+        "Viscosity": "2500-3000",
+        "Characteristics": "Strong Bond in Vulcanization",
+        "Type": "NR Latex Based Adhesive"
+      },
+      {
+        "Product Code": "KrossFix PU 666*",
+        "Use": "Stockfit & Assembly",
+        "Appearance": "Milky White Opaque",
+        "Viscosity": "1600-2400",
+        "Characteristics": "Very Good Bond Strength, Good Heat Resistance",
+        "Type": "Water Based PU Adhesive"
+      },
+      {
+        "Product Code": "KrossFix PU 777*",
+        "Use": "Stockfit & Assembly",
+        "Appearance": "Milky White Opaque",
+        "Viscosity": "1600-2400",
+        "Characteristics": "Very Good Bond Strength, Good Heat Resistance",
+        "Type": "Water Based PU Adhesive"
+      },
+        {
+        "Product Code": "KROSSMELT 80R",
+        "Use": "Synthetic Leather / Stockfit",
+        "Appearance": "Light Yellow Solid",
+        "Viscosity": "1800-3000",
+        "Characteristics": "Good Workability",
+        "Type": "Hotmelt Adhesive"
+      },
+      {
+        "Product Code": "KROSSMELT 100A",
+        "Use": "Edge Folding",
+        "Appearance": "Granulars",
+        "Viscosity": "N.A.",
+        "Characteristics": "Excellent Strength, Long Tack",
+        "Type": "Hotmelt Adhesive"
+      },
+      {
+        "Product Code": "KROSSMELT 120P",
+        "Use": "Leather/Texon/Non Woven / TR Color",
+        "Appearance": "Light Yellow Opaque Solid",
+        "Viscosity": "N.A.",
+        "Characteristics": "Excellent Sprayability, Long Tack",
+        "Type": "Hotmelt Adhesive"
+      }
+    ]
+  }

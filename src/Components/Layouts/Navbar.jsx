@@ -2,55 +2,38 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import Logo from '../../assets/Logo 1.png';
+import Logo from '../../assets/krossfixlogo.png';
 
 const Navbar = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false); // State for mobile menu
-  const [isDropdownOpen, setDropdownOpen] = useState(false); // State for "Products" dropdown
-  const navbarRef = useRef(null); // Reference for the entire navbar
-
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const navbarRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top of the page on every location change
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // Close dropdown when clicking anywhere inside or outside the navbar
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {
-        setDropdownOpen(false); // Close dropdown if click is outside navbar
+        setDropdownOpen(false);
       }
     };
-
-    // Add event listener to detect clicks inside and outside the navbar
     document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      // Clean up event listener on component unmount
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Toggle the mobile menu
-  const handleMenuToggle = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-
-  // Toggle the dropdown visibility
+  const handleMenuToggle = () => setMenuOpen(!isMenuOpen);
   const handleDropdownToggle = (e) => {
-    e.stopPropagation(); // Prevent this event from closing the dropdown
+    e.stopPropagation();
     setDropdownOpen(!isDropdownOpen);
   };
 
-  // Function to check if the current path matches the given path
   const isActive = (path) => location.pathname === path;
-
-  // Function to check if the current path is related to any product pages
   const isProductActive = (productPath) => location.pathname.includes(productPath);
 
-  // Dropdown animation variants
   const dropdownVariants = {
     hidden: { opacity: 0, y: -10, height: 0 },
     visible: { opacity: 1, y: 0, height: 'auto' },
@@ -59,15 +42,12 @@ const Navbar = () => {
   return (
     <nav ref={navbarRef} className="bg-white shadow-md fixed w-full z-50 top-0">
       <div className="w-full max-w-screen-xl mx-auto flex items-center justify-between py-4 px-4 lg:px-6">
-        
-        {/* Logo */}
         <div>
           <Link to="/">
             <img src={Logo} alt="Logo" className="h-8 md:h-10" />
           </Link>
         </div>
 
-        {/* Hamburger Icon (Mobile) */}
         <div className="md:hidden">
           <button onClick={handleMenuToggle} className="text-black focus:outline-none">
             {isMenuOpen ? <FaTimes className="text-xl" /> : <FaBars className="text-xl" />}
@@ -75,7 +55,7 @@ const Navbar = () => {
         </div>
 
         {/* Navbar links (Desktop) */}
-        <div className={`hidden md:flex md:items-center space-x-4 lg:space-x-10`}>
+        <div className="hidden md:flex md:items-center space-x-4 lg:space-x-10">
           <Link
             to="/"
             className={`font-medium ${isActive('/') ? 'text-orange-500' : 'text-[#20212F] hover:text-orange-500'}`}
@@ -127,7 +107,7 @@ const Navbar = () => {
                     className={`block px-4 py-2 ${isActive('/products/products3') ? 'text-orange-500' : 'text-gray-800 hover:bg-gray-100'}`}
                     onClick={() => setDropdownOpen(false)}
                   >
-                    Primers 
+                    Primer 
                   </Link>
                   <Link
                     to="/products/products4"

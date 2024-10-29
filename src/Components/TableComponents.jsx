@@ -1,93 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion'; // Import framer-motion
-import data from '../Data/Product.json'; // Adjust the path as necessary
+// src/Components/TableComponent.jsx
+import React from 'react';
+import PropTypes from 'prop-types';
+import cleanerData from '../Data/Cleaner.json';
+import primerData from '../Data/Primer.json';
+import adhesiveData from '../Data/Adhesive.json';
+import hardenerData from '../Data/Hardener.json';
+import '../Components/Styles/TableComponent.css';
+
+// Map selected product to corresponding data
+const productDataMap = {
+  Cleaner: cleanerData.Cleaners,
+  Primer: primerData.Primers,
+  Adhesive: adhesiveData.Adhesive,
+  Hardener: hardenerData.Hardener,
+};
 
 const TableComponent = ({ selectedProduct }) => {
-  const [categories, setCategories] = useState([]);
+  const products = productDataMap[selectedProduct] || [];
 
-  useEffect(() => {
-    // Load data from the JSON file
-    setCategories(data.categories);
-  }, []);
-
-  const renderTableHeaders = (product) => {
-    return Object.keys(product).map((key, index) => (
-      <th
-        key={index}
-        className="border px-4 py-2 bg-[#334966] text-center font-semibold text-white"
-      >
-        {key}
-      </th>
-    ));
-  };
-
-  const renderTableRows = (products) => {
-    return products.map((product, index) => (
-      <tr key={index} className="even:bg-[#EBEEF2]">
-        {Object.entries(product).map(([key, value], idx) => (
-          <td
-            key={idx}
-            className={`border px-4 py-2 text-center text-black ${
-              key === 'Product Code'
-                ? 'font-bold text-lg'
-                : 'text-base'
-            }`}
-            style={{ fontSize: key === 'Product Code' ? '16px' : '14px' }}
-          >
-            {value}
-          </td>
-        ))}
-      </tr>
-    ));
-  };
-
-  // Filter to only show the selected category
-  const selectedCategory = categories.find(
-    (category) => category.categoryName === selectedProduct
-  );
-
-  // Fade-in animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 }, // Initial state
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } }, // Animation
-  };
+  // Group products by 'Type'
+  const groupedData = products.reduce((acc, product) => {
+    const type = product.Type || "Other";
+    if (!acc[type]) acc[type] = [];
+    acc[type].push(product);
+    return acc;
+  }, {});
 
   return (
     <div className="container mx-auto p-4">
-      {selectedCategory ? (
-        <motion.div
-          key={selectedCategory.categoryName}
-          className="mb-8 shadow-lg rounded-lg overflow-hidden"
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn} // Apply fade-in animation
-        >
-          {/* Apply horizontal scroll effect for 480px screen */}
-          <div className="overflow-x-auto">
-            <table className="table-auto w-full border-collapse border border-blue-200 min-w-[800px]">
-              <thead>
-                <tr className="text-sm lg:text-base">
-                  {selectedCategory.products.length > 0 &&
-                    renderTableHeaders(selectedCategory.products[0])}
-                </tr>
-              </thead>
-              <tbody className="text-xs sm:text-sm md:text-base lg:text-lg">
-                {renderTableRows(selectedCategory.products)}
-              </tbody>
-            </table>
+      {Object.keys(groupedData).map((type) => (
+        <div key={type} className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-center">{type}</h2>
+          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {groupedData[type].map((product, index) => (
+              <div key={index} className="border rounded-lg shadow p-4 bg-white">
+                <h3 className="font-bold text-lg mb-2">{product['Product Code']}</h3>
+                <p><strong>Use:</strong> {product.Use}</p>
+                <p><strong>Appearance:</strong> {product.Appearance}</p>
+                <p><strong>Viscosity:</strong> {product.Viscosity}</p>
+                <p><strong>Characteristics:</strong> {product.Characteristics}</p>
+              </div>
+            ))}
           </div>
-        </motion.div>
-      ) : (
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-        >
-          No products available for {selectedProduct}
-        </motion.div>
-      )}
+        </div>
+      ))}
     </div>
   );
+};
+
+TableComponent.propTypes = {
+  selectedProduct: PropTypes.string.isRequired,
 };
 
 export default TableComponent;

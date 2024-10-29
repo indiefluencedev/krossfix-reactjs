@@ -1,0 +1,52 @@
+{
+    "Cleaners": [
+      {
+        "Product Code": "CleanX 002M",
+        "Use": "Print Cleaning ,Reducer",
+        "Appearance": "Colorless Transparent Liquid",
+        "Viscosity": "NA",
+        "Characteristics": "Excellent Cleaning, Suitable As Ink Reducer",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "CleanX 911",
+        "Use": "Synthetic Upper Cleaning",
+        "Appearance": "Colorless Transparent Liquid",
+        "Viscosity": "NA",
+        "Characteristics": "Excellent Cleaning For All Kind Of Upper",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "CleanX 933",
+        "Use": "PU / PVC / Rubber Cleaning",
+        "Appearance": "Colorless Transparent Liquid",
+        "Viscosity": "NA",
+        "Characteristics": "Excellent Cleaning Of PU, PVC, Rubber Soles",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "CleanX 832",
+        "Use": "EVA / Phylon Cleaning",
+        "Appearance": "Colorless Transparent Liquid",
+        "Viscosity": "NA",
+        "Characteristics": "Strong Cleaner For Phylon & EVA Soles",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "CleanX VC",
+        "Use": "Finishing Cleaner For Upper",
+        "Appearance": "Colorless Transparent Liquid",
+        "Viscosity": "NA",
+        "Characteristics": "Harmless To Upper Material",
+        "Type": "Solvent Based"
+      },
+      {
+        "Product Code": "CleanX V6",
+        "Use": "Finishing Cleaner For EVA/Phylon",
+        "Appearance": "Colorless Transparent Liquid",
+        "Viscosity": "NA",
+        "Characteristics": "Excellent Cleaning Of Sole",
+        "Type": "Solvent Based"
+      }
+    ]
+  }
