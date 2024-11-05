@@ -123,12 +123,12 @@ const OurTeam = () => {
         {/* Carousel for 480px and 768px */}
         {isMobile ? (
           <>
-            <div className="relative w-96 h-[450px] overflow-hidden md:ml-0 ml-1">
+            <div className="relative w-80 md:ml-0 ml-10 md:w-96 h-[450px] overflow-hidden">
               <div className="flex justify-center items-center h-full">
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.div
                     key={currentSlide}
-                    className="relative p-4 bg-white shadow-md rounded-lg w-80 mx-auto"
+                    className="relative p-4 bg-white shadow-md rounded-lg w-[250px] md:w-80 mx-auto "
                     custom={direction}
                     variants={slideVariants}
                     initial="enter"

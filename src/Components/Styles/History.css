@@ -294,7 +294,7 @@
 }
 
 
-@media (max-width: 325px) {
+@media (max-width: 320px) {
   .history-container {
     width: 90%;
     margin: 0 auto;
@@ -345,13 +345,13 @@
   .timeline-item.left .timeline-year {
     right: 10px; /* Adjust this value to align horizontally with the triangle */
     top: -157px; /* Adjust this value to position vertically */
-    margin-right: 5px;
+    margin-right: 10px;
   }
   
   .timeline-item.right .timeline-year {
     left: 10px; /* Adjust this value to align horizontally with the triangle */
     top: 263px; /* Adjust this value to position vertically */
-    margin-left: -10px;
+    margin-left: 10px;
   }
 
   .history-title {
