@@ -123,7 +123,7 @@ const OurTeam = () => {
         {/* Carousel for 480px and 768px */}
         {isMobile ? (
           <>
-            <div className="relative w-96 h-[450px] overflow-hidden">
+            <div className="relative w-96 h-[450px] overflow-hidden md:ml-0 ml-1">
               <div className="flex justify-center items-center h-full">
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.div

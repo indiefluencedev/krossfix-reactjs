@@ -16,7 +16,17 @@ import '../Components/Styles/Gallery.css';
 
 const Gallery = () => {
   const [isInView, setIsInView] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
   const galleryRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,12 +57,14 @@ const Gallery = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
   };
 
+  const GalleryContainer = isDesktop ? motion.div : 'div';
+
   return (
-    <motion.div
+    <GalleryContainer
       ref={galleryRef}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={containerVariants}
+      initial={isDesktop ? 'hidden' : undefined}
+      animate={isInView && isDesktop ? 'visible' : undefined}
+      variants={isDesktop ? containerVariants : undefined}
       className="gallery-container mx-auto"
     >
       <h2 className="gallery-heading">Gallery</h2>
@@ -69,13 +81,13 @@ const Gallery = () => {
         <div className="grid-item item10"><img src={image10} alt="item" /></div>
         <div className="grid-item item11"><img src={image11} alt="item" /></div>
         <div className="grid-item item12"><img src={image12} alt="item" /></div>
-        <div className="grid-item item12"><img src={image3} alt="item" /></div>
-        <div className="grid-item item12"><img src={image7} alt="item" /></div>
-        <div className="grid-item item12"><img src={image1} alt="item" /></div>
-        <div className="grid-item item12"><img src={image2} alt="item" /></div>
-        <div className="grid-item item12"><img src={image8} alt="item" /></div>
+        <div className="grid-item item13"><img src={image3} alt="item" /></div>
+        <div className="grid-item item14"><img src={image7} alt="item" /></div>
+        <div className="grid-item item15"><img src={image1} alt="item" /></div>
+        <div className="grid-item item16"><img src={image2} alt="item" /></div>
+        <div className="grid-item item17"><img src={image8} alt="item" /></div>
       </div>
-    </motion.div>
+    </GalleryContainer>
   );
 };
 

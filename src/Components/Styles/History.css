@@ -292,3 +292,66 @@
     font-weight: 700;
   }
 }
+
+
+@media (max-width: 375px) {
+  .history-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .timeline-item.left .timeline-box,
+  .timeline-item.right .timeline-box {
+    margin-left: 40px;
+    width: 20%; /* Make text boxes narrower */
+  }
+
+  .timeline-box {
+    padding: 20px;
+  }
+
+  .timeline-item.left .timeline-box {
+    text-align: left;
+    margin-right: 240px;
+    position: relative;
+  }
+  
+  .timeline-item.right .timeline-box {
+    text-align: right;
+    margin-left: 240px;
+    position: relative;
+  }
+
+  .timeline-year {
+    font-size: 24px;
+    color: #f2980f;
+    font-weight: bold;
+    position: absolute;
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%);
+    width: 120px; /* Increase width to avoid wrapping */
+    text-align: center; /* Center the text */
+    white-space: nowrap; /* Prevent wrapping */
+  }
+
+  .timeline-item.left .timeline-year {
+    right: 50px; /* Adjust this value to align horizontally with the triangle */
+    top: -157px; /* Adjust this value to position vertically */
+    margin-right: -10px;
+  }
+  
+  .timeline-item.right .timeline-year {
+    left: 50px; /* Adjust this value to align horizontally with the triangle */
+    top: 263px; /* Adjust this value to position vertically */
+    margin-left: -10px;
+  }
+
+  .history-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+}
+
+

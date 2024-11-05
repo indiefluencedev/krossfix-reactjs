@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion'; // Import framer-motion
+import { motion } from 'framer-motion';
 
 import Herosection from '../Components/Herosection';
 import HomeAbout from '../Components/HomeAbout';
@@ -39,39 +39,42 @@ const HomePage = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
   };
 
+  const Section = ({ children }) => (
+    isMobile ? <div>{children}</div> : <motion.div initial="hidden" animate="visible" variants={fadeIn}>{children}</motion.div>
+  );
+
   return (
     <div>
-      {/* Apply fade-in animation to each section */}
-      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+      {/* Apply fade-in animation to each section based on screen size */}
+      <Section>
         <Herosection />
-      </motion.div>
+      </Section>
 
-      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+      <Section>
         <HomeAbout />
-      </motion.div>
+      </Section>
 
-      {/* <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+      {/* <Section>
         {isMobile ? <MobileHomeProducts /> : <HomeProducts />}
-      </motion.div> */}
+      </Section> */}
 
-    <ProductSection/>
+      <ProductSection />
 
-
-      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+      <Section>
         <Gallery />
-      </motion.div>
+      </Section>
 
-      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+      <Section>
         <Reviews />
-      </motion.div>
+      </Section>
 
-      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+      <Section>
         <ProductCardSlider />
-      </motion.div>
+      </Section>
 
-      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+      <Section>
         <Queries />
-      </motion.div>
+      </Section>
     </div>
   );
 };

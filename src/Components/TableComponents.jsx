@@ -59,3 +59,4 @@ TableComponent.propTypes = {
 };
 
 export default TableComponent;
+

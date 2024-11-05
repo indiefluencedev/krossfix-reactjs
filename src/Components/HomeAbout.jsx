@@ -97,7 +97,7 @@ const HomeAbout = () => {
           </p>
 
           {/* Vision and Mission Tabs in a Card Style */}
-          <div className="p-5 rounded-lg shadow-lg border border-gray-100 bg-white h-[400px] md:h-[300px] lg:h-[350px]">
+          <div className="p-5 rounded-lg shadow-lg border border-gray-100 bg-white h-[440px] md:h-[300px] lg:h-[350px]">
             <div className="flex flex-row justify-start gap-3 md:gap-8 py-3">
               {/* Vision Tab */}
               <div

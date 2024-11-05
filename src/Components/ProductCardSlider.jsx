@@ -27,25 +27,24 @@ const ProductCardSlider = () => {
     { id: 9, name: "Product 9", description: "Designed for convenience and style.", image: bottle9 },
   ];
 
-  // State to track the active slide
   const [activeIndex, setActiveIndex] = useState(0);
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 1000,
-    slidesToShow: 4, // Display 4 cards at a time for larger screens
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     centerMode: false,
-    arrows: false, // Remove swipe arrows
-    beforeChange: (current, next) => setActiveIndex(next), // Update activeIndex before the slide changes
+    arrows: false,
+    beforeChange: (current, next) => setActiveIndex(next),
     responsive: [
       {
-        breakpoint: 1024, // Adjust for 1024px frame
+        breakpoint: 1025,
         settings: {
-          slidesToShow: 2, // Show exactly 3 cards
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -72,36 +71,31 @@ const ProductCardSlider = () => {
     <div className="bg-gray-100 py-12">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold text-[#403b68]">Top Selling Products</h2>
-        {/* <p className="text-gray-600">Find the best products for your daily needs.</p> */}
       </div>
-      
-      {/* Ensure slider max-width and centering */}
-      <div className="max-w-[1440px] mx-auto">
+
+      <div className="max-w-[1440px] mx-auto px-4">
         <Slider {...settings}>
           {products.map((product, index) => (
             <div key={product.id} className="p-2">
-              {/* Ensure equal spacing between cards */}
               <div
                 className={`card_slide relative transition-all duration-700 ease-in-out bg-white rounded-lg shadow-md p-2 ${
                   index === activeIndex ? 'transform scale-105 z-20' : 'transform scale-90 z-10'
                 }`}
                 style={{
-                  width: index === activeIndex ? "300px" : "260px", // Adjusted sizes for all cards
+                  width: index === activeIndex ? "300px" : "260px",
                   marginTop: index === activeIndex ? "0" : "190px",
                   height: index === activeIndex ? "450px" : "280px",
                 }}
               >
-                {/* Product image */}
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover rounded-lg"
                 />
-                {/* Overlay info for the active card */}
                 {index === activeIndex && (
-                  <div className="absolute bottom-6 mr-7 ml-5 bg-white p-4 rounded-lg shadow-lg">
+                  <div className="absolute bottom-6 w-[250px] mx-auto bg-white  py-5 ml-4 rounded-lg shadow-lg text-center">
                     <h3 className="text-xl font-semibold">{product.name}</h3>
-                    <p className="text-sm text-gray-700">{product.description}</p>
+                    <p className="text-sm text-gray-700 px-1">{product.description}</p>
                   </div>
                 )}
               </div>
@@ -110,34 +104,31 @@ const ProductCardSlider = () => {
         </Slider>
       </div>
 
-      {/* Media query styles */}
       <style jsx>{`
         @media (max-width: 1024px) {
           .card_slide {
-            margin-left: 20px;
             margin-right: 20px;
           }
         }
-
-        // @media (max-width: 768px) {
-        //   .card_slide {
-        //     margin-left: 100px;
-        //     margin-right: 100px;
-        //     justify-content:center;
-        //   }
-        // }
 
         @media (max-width: 1440px) {
           .card_slide {
-            margin-left: 100px;
-            margin-right: 20px;
+            margin-left: 50px;
+            margin-right: auto;
           }
         }
 
-         @media (max-width: 480px) {
+        @media (max-width: 768px) {
           .card_slide {
-            margin-left: 55px;
-            // margin-right: 10px;
+            margin-left: 60px;
+            margin-right: auto;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .card_slide {
+            margin-left: auto;
+            margin-right: auto;
           }
         }
       `}</style>
