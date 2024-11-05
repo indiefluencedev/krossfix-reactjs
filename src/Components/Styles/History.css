@@ -294,20 +294,28 @@
 }
 
 
-@media (max-width: 375px) {
+@media (max-width: 320px) {
   .history-container {
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
   }
 
+  .para-right {
+    font-size: 12px;
+  }
+
+  .para-left {
+    font-size: 12px;
+  }
   .timeline-item.left .timeline-box,
   .timeline-item.right .timeline-box {
-    margin-left: 40px;
-    width: 20%; /* Make text boxes narrower */
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 50%; /* Make text boxes narrower */
   }
 
   .timeline-box {
-    padding: 20px;
+    padding: 10px;
   }
 
   .timeline-item.left .timeline-box {
@@ -335,13 +343,13 @@
   }
 
   .timeline-item.left .timeline-year {
-    right: 50px; /* Adjust this value to align horizontally with the triangle */
+    right: 10px; /* Adjust this value to align horizontally with the triangle */
     top: -157px; /* Adjust this value to position vertically */
     margin-right: -10px;
   }
   
   .timeline-item.right .timeline-year {
-    left: 50px; /* Adjust this value to align horizontally with the triangle */
+    left: 10px; /* Adjust this value to align horizontally with the triangle */
     top: 263px; /* Adjust this value to position vertically */
     margin-left: -10px;
   }
