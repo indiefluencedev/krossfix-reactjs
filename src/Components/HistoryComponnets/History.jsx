@@ -12,7 +12,7 @@ const History = () => {
           <div className="timeline-dot"></div>
           <div className="timeline-box">
             <div className="triangle-left"></div> {/* Triangle added */}
-            <p className='para-left'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
 
@@ -22,7 +22,7 @@ const History = () => {
           <div className="timeline-dot"></div>
           <div className="timeline-box">
             <div className="triangle-right"></div> {/* Triangle added */}
-            <p className='para-right'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
 
@@ -32,7 +32,7 @@ const History = () => {
           <div className="timeline-dot"></div>
           <div className="timeline-box">
             <div className="triangle-left"></div> {/* Triangle added */}
-            <p className='para-left'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
 
@@ -42,7 +42,7 @@ const History = () => {
           <div className="timeline-dot"></div>
           <div className="timeline-box">
             <div className="triangle-right"></div> {/* Triangle added */}
-            <p className='para-right'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
       </div>
