@@ -176,28 +176,28 @@ const Navbar = () => {
                       className={`block px-4 py-2 ${isActive('/products/products1') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
                       onClick={handleMenuToggle}
                     >
-                      Solvent Based Cleaner
+                       Cleaner
                     </Link>
                     <Link
                       to="/products/products2"
                       className={`block px-4 py-2 ${isActive('/products/products2') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
                       onClick={handleMenuToggle}
                     >
-                      Water based adhesive
+                       Adhesive
                     </Link>
                     <Link
                       to="/products/products3"
                       className={`block px-4 py-2 ${isActive('/products/products3') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
                       onClick={handleMenuToggle}
                     >
-                      Thermoplastic hotmelt adhesive 
+                       Primer  
                     </Link>
                     <Link
                       to="/products/products4"
                       className={`block px-4 py-2 ${isActive('/products/products4') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
                       onClick={handleMenuToggle}
                     >
-                      PU reactive hotmelt adhesive 
+                       Hardener 
                     </Link>
                   </motion.div>
                 )}
