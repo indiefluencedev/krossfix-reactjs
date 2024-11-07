@@ -74,16 +74,16 @@ const AboutUs = () => {
           variants={textVariants}
           className="w-full md:w-1/2 md:pr-8"
         >
-          <h2 className="text-4xl text-[#403b68] sm:text-4xl font-bold mb-6 text-gray-900 text-center md:text-left relative z-20">
+          <h2 className="text-4xl sm:text-4xl font-bold mb-6 text-gray-900 text-center md:text-left relative z-20">
             About Us
           </h2>
-          <p className="text-base sm:text-lg text-gray-700 mb-4 text-center md:text-left font-semibold">
+          <p className="text-base sm:text-lg text-gray-700 mb-4 text-center md:text-left font-regular">
             We are a technology-driven organization with a team of highly qualified and committed individuals.
           </p>
-          <p className="text-base sm:text-lg text-gray-700 mb-4 text-center md:text-left font-semibold">
+          <p className="text-base sm:text-lg text-gray-700 mb-4 text-center md:text-left font-regular">
             Each function is driven by competent and experienced staff to ensure effective implementation of the vision and mission of the organization in each of their areas of operations.
           </p>
-          <p className="text-base sm:text-lg text-gray-700 text-center md:text-left font-semibold">
+          <p className="text-base sm:text-lg text-gray-700 text-center md:text-left font-regular">
             We are constantly developing our teams with the addition of industry veterans to accelerate the speed of development.
           </p>
         </motion.div>

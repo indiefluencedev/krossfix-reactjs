@@ -110,7 +110,7 @@ const OurValues = () => {
         </div>
 
         {/* Right Side - Content Box */}
-        <div className="md:w-[1074px] w-[280px] h-auto mt-10 md:mt-0 items-center md:mr-0">
+        <div className="md:w-[1074px] w-[280px] h-auto mt-10 md:mt-0 items-center md:mr-0 ">
           <div
             className="relative bg-gradient-to-r from-[#241F52] to-[#2F2568] text-white p-0 rounded-lg transition-all duration-500 ease-in-out shadow-lg"
             style={{
@@ -121,7 +121,7 @@ const OurValues = () => {
             }} 
           >
             {/* Description dynamically changes based on active index */}
-            <p className="md:text-lg text-[12px]  leading-relaxed font-regular md:px-8 px-8 text-center margin-top-[50px] md:mt-0"> {/* Adjusted padding, margin-top and font-size */}
+            <p className="md:text-lg text-[12px]  leading-relaxed font-regular lg:px-10 lg:py-10 md:px-5 md:py-2  text-left margin-top-[50px] md:mt-0"> {/* Adjusted padding, margin-top and font-size */}
               {values[activeIndex].description}
             </p>
           </div>

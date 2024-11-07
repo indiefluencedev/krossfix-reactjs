@@ -72,7 +72,7 @@ const InfoSection = ({ imageSrc, title, description }) => {
         variants={textVariants}
         className="lg:w-3/5 w-full lg:pr-8 mb-8 lg:mb-0"
       >
-        <h2 className="text-2xl md:text-4xl text-[#403b68] lg:text-3xl font-bold mb-4">{title}</h2>
+        <h2 className="text-4xl md:text-5xl text-[#403b68]  font-bold mb-4">{title}</h2>
         <p className="text-gray-600 mb-4">
           {description}
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit. Proin ut magna ac eros feugiat vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod eleifend massa, nec blandit velit.
