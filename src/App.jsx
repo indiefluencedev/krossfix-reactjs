@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import Navbar from './Components/Layouts/Navbar';
 import Footer from './Components/Layouts/Footer';
 import Home from './Pages/Home';
@@ -13,7 +14,7 @@ import banner2 from './assets/productsimages/banner.png';
 import banner3 from './assets/productsimages/banner.png';
 import banner4 from './assets/productsimages/banner.png';
 
-import product1 from'./assets/productsimages/products.png';
+import product1 from './assets/productsimages/products.png';
 import product2 from './assets/productsimages/products.png';
 import product3 from './assets/productsimages/products.png';
 import product4 from './assets/productsimages/products.png';
@@ -65,6 +66,21 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <FloatingWhatsApp
+        phoneNumber={919817742069}
+        showPopup={true}
+        // avatar='/logo/indie-whatsapp.svg'
+        accountName='Venu Gopal Singhal'
+        statusMessage='indiefluence.in'
+        chatMessage="Hey there!
+      I'm Venu Gopal Singhal, Founder of Indiefluence.
+      
+      Just drop a text here and let's discuss how we can grow together!"
+        notification={true}
+        notificationDelay={1}
+        chatboxHeight={410}
+        messageDelay={1}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
