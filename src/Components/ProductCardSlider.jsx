@@ -39,6 +39,7 @@ const ProductCardSlider = () => {
     autoplaySpeed: 3000,
     centerMode: false,
     arrows: false,
+    
     beforeChange: (current, next) => setActiveIndex(next),
     responsive: [
       {
@@ -78,8 +79,8 @@ const ProductCardSlider = () => {
           {products.map((product, index) => (
             <div key={product.id} className="p-2">
               <div
-                className={`card_slide relative transition-all duration-700 ease-in-out bg-white rounded-lg shadow-md p-2 ${
-                  index === activeIndex ? 'transform scale-105 z-20' : 'transform scale-90 z-10'
+                className={`card_slide relative transition-all duration-700 ease-in-out bg-white rounded-lg shadow-md p-2 overflow-hidden ${
+                  index === activeIndex ? 'active-card' : 'inactive-card'
                 }`}
                 style={{
                   width: index === activeIndex ? "300px" : "260px",
@@ -90,10 +91,10 @@ const ProductCardSlider = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-full h-full object-cover rounded-lg transition-transform duration-500 transform hover:scale-110"
                 />
                 {index === activeIndex && (
-                  <div className="absolute bottom-6 w-[250px] mx-auto bg-white  py-5 ml-4 rounded-lg shadow-lg text-center">
+                  <div className="absolute bottom-6 w-[250px] mx-auto bg-white py-5 ml-4 rounded-lg shadow-lg text-center">
                     <h3 className="text-xl font-semibold">{product.name}</h3>
                     <p className="text-sm text-gray-700 px-1">{product.description}</p>
                   </div>
@@ -105,16 +106,20 @@ const ProductCardSlider = () => {
       </div>
 
       <style jsx>{`
-        @media (max-width: 1024px) {
-          .card_slide {
-            margin-right: 20px;
-          }
+        .active-card {
+          transform: scale(1.05);
+          z-index: 20;
         }
 
-        @media (max-width: 1440px) {
-          .card_slide {
-            margin-left: 50px;
-            margin-right: auto;
+        .inactive-card {
+          transform: scale(0.9);
+          z-index: 10;
+        }
+
+        @media (max-width: 1024px) {
+          .active-card,
+          .inactive-card {
+            transform: scale(1);
           }
         }
 

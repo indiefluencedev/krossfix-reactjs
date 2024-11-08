@@ -6,6 +6,7 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import ProductPage from './Pages/ProductPage';
+import GalleryPage from './Pages/GalleryPage';
 
 
 import banner1 from './assets/productsimages/banner.png';
@@ -20,28 +21,28 @@ import product4 from './assets/productsimages/products.png';
 
 // Product-specific data to pass to ProductPage
 const productInfo = {
-  "products1": {
+  "cleaner": {
     bannerImage: banner1,
     title: "Cleaner",
     description: "Description for Cleaner...",
     selectedProduct: "Cleaner",
     imageSrc: product1
   },
-  "products2": {
+  "adhesive": {
     bannerImage: banner2,
     title: "Adhesive",
     description: "Description for Adhesive...",
     selectedProduct: "Adhesive",
     imageSrc: product2
   },
-  "products3": {
+  "primer": {
     bannerImage: banner3,
     title: "Primer",
     description: "Description for Primer...",
     selectedProduct: "Primer",
     imageSrc: product3
   },
-  "products4": {
+  "hardener": {
     bannerImage: banner4,
     title: "Hardener",
     description: "Description for Hardener...",
@@ -70,6 +71,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/products/:productType" element={<DynamicProductPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+
       </Routes>
       <Footer />
     </Router>

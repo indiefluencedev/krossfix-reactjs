@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className="w-full max-w-screen-xl mx-auto flex items-center justify-between py-4 px-4 lg:px-6">
         <div>
           <Link to="/">
-            <img src={Logo} alt="Logo" className="h-8 md:h-10" />
+            <img src={Logo} alt="Logo" className="h-8 md:h-14" />
           </Link>
         </div>
 
@@ -68,6 +68,12 @@ const Navbar = () => {
           >
             About
           </Link>
+          <Link
+            to="/gallery"
+            className={`font-medium ${isActive('/gallery') ? 'text-orange-500' : 'text-[#20212F] hover:text-orange-500'}`}
+          >
+            Gallery
+          </Link>
 
           {/* Products with Click Dropdown */}
           <div className="relative">
@@ -89,29 +95,29 @@ const Navbar = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <Link
-                    to="/products/products1"
-                    className={`block px-4 py-2 ${isActive('/products/products1') ? 'text-orange-500' : 'text-gray-900 hover:bg-gray-100'}`}
+                    to="/products/cleaner"
+                    className={`block px-4 py-2 ${isActive('/products/cleaner') ? 'text-orange-500' : 'text-gray-900 hover:bg-gray-100'}`}
                     onClick={() => setDropdownOpen(false)}
                   >
                      Cleaner
                   </Link>
                   <Link
-                    to="/products/products2"
-                    className={`block px-4 py-2 ${isActive('/products/products2') ? 'text-orange-500' : 'text-gray-800 hover:bg-gray-100'}`}
+                    to="/products/adhesive"
+                    className={`block px-4 py-2 ${isActive('/products/adhesive') ? 'text-orange-500' : 'text-gray-800 hover:bg-gray-100'}`}
                     onClick={() => setDropdownOpen(false)}
                   >
                     Adhesive
                   </Link>
                   <Link
-                    to="/products/products3"
-                    className={`block px-4 py-2 ${isActive('/products/products3') ? 'text-orange-500' : 'text-gray-800 hover:bg-gray-100'}`}
+                    to="/products/primer"
+                    className={`block px-4 py-2 ${isActive('/products/primer') ? 'text-orange-500' : 'text-gray-800 hover:bg-gray-100'}`}
                     onClick={() => setDropdownOpen(false)}
                   >
                     Primer 
                   </Link>
                   <Link
-                    to="/products/products4"
-                    className={`block px-4 py-2 ${isActive('/products/products4') ? 'text-orange-500' : 'text-gray-800 hover:bg-gray-100'}`}
+                    to="/products/hardener"
+                    className={`block px-4 py-2 ${isActive('/products/hardener') ? 'text-orange-500' : 'text-gray-800 hover:bg-gray-100'}`}
                     onClick={() => setDropdownOpen(false)}
                   >
                     Hardener
@@ -172,29 +178,29 @@ const Navbar = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <Link
-                      to="/products/products1"
-                      className={`block px-4 py-2 ${isActive('/products/products1') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
+                      to="/products/cleaner"
+                      className={`block px-4 py-2 ${isActive('/products/cleaner') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
                       onClick={handleMenuToggle}
                     >
                        Cleaner
                     </Link>
                     <Link
-                      to="/products/products2"
-                      className={`block px-4 py-2 ${isActive('/products/products2') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
+                      to="/products/adhesive"
+                      className={`block px-4 py-2 ${isActive('/products/adhesive') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
                       onClick={handleMenuToggle}
                     >
                        Adhesive
                     </Link>
                     <Link
-                      to="/products/products3"
-                      className={`block px-4 py-2 ${isActive('/products/products3') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
+                      to="/products/primer"
+                      className={`block px-4 py-2 ${isActive('/products/primer') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
                       onClick={handleMenuToggle}
                     >
                        Primer  
                     </Link>
                     <Link
-                      to="/products/products4"
-                      className={`block px-4 py-2 ${isActive('/products/products4') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
+                      to="/products/hardener"
+                      className={`block px-4 py-2 ${isActive('/products/hardener') ? 'text-orange-500' : 'text-black hover:bg-gray-100'}`}
                       onClick={handleMenuToggle}
                     >
                        Hardener 

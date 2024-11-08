@@ -1,80 +1,69 @@
-/* Gallery Heading */
-.gallery-heading {
-  text-align: center;
-  font-size: 2.25rem;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  font-weight: bold;
-  color: #403b68;
-}
-
-/* Grid Container with custom scrollbar */
+/* Grid Container */
 .grid-container {
   width: 100%;
-  max-width: 1240px; /* Restricts container width */
+  padding-top: 40px;
+  max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns for larger screens */
-  grid-gap: 10px; /* Consistent 10px gap between all grid items */
+  grid-template-columns: 2fr 1fr 1fr 1fr; /* Left column larger */
+  grid-gap: 10px;
   padding: 10px;
-  max-height: 700px; /* Restricting container height */
-  overflow-y: auto; /* Scroll if content exceeds container height */
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch; /* Adds momentum scrolling for iOS devices */
+  overflow: hidden;
 }
 
 /* Grid Item Styling */
 .grid-item {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Ensure overflow is hidden for zoom effect */
+  overflow: hidden;
+  cursor: pointer;
 }
 
-/* Adjust the image size for all items */
 .grid-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+  transition: transform 0.3s ease;
 }
 
-/* Hover animation for image zoom */
 .grid-item:hover img {
-  transform: scale(1.1); /* Slightly zoom in the image */
+  transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
-/* Set different sizes for specific grid items */
-/* Larger Images */
+/* Overlay for "View All" on each image */
+.view-all-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.grid-item:hover .view-all-overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* Layout Adjustments */
 .grid-item.item1 {
-  grid-column: span 2; /* Takes up 2 columns */
-  grid-row: span 2;    /* Takes up 2 rows */
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
-.grid-item.item10 {
-  grid-column: span 2; /* Takes up 2 columns */
-  grid-row: span 2;    /* Takes up 2 rows */
-}
-
-/* Smaller Images */
 .grid-item.item2,
 .grid-item.item3,
 .grid-item.item4,
-.grid-item.item5,
-.grid-item.item7,
-.grid-item.item8,
-.grid-item.item9,
-.grid-item.item11,
-.grid-item.item12 {
+.grid-item.item5 {
   grid-column: span 1;
-  grid-row: span 1;
-}
-
-/* Medium-sized Images */
-.grid-item.item6 {
-  grid-column: span 2;
   grid-row: span 1;
 }
 
@@ -87,62 +76,21 @@
 
 @media screen and (max-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Adjusts to 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
   }
 }
 
-/* Restore original design and layout for 480px */
 @media screen and (max-width: 480px) {
   .grid-container {
-    grid-template-columns: 1fr; /* Single column on very small screens */
-    grid-gap: 5px; /* Reduced gap for small screens */
-    max-height: unset; /* Remove height restriction */
-    padding: 5px; /* Reduce padding for smaller screen */
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
   }
 
   .grid-item {
-    height: 150px; /* Set a fixed height for small screens */
+    height: 150px;
   }
 
-  .grid-item img {
-    border-radius: 5px; /* Reduced border-radius for smaller screens */
-  }
-
-  /* Remove hover zoom effect on small screens */
-  .grid-item:hover img {
-    transform: none; /* No zoom effect */
-  }
-}
-
-/* Custom scrollbar for grid-container */
-.grid-container::-webkit-scrollbar {
-  width: 8px; /* Custom width for the scrollbar */
-}
-
-.grid-container::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Light background for the scrollbar track */
-  border-radius: 10px;
-}
-
-.grid-container::-webkit-scrollbar-thumb {
-  background-color: #888; /* Scrollbar thumb color */
-  border-radius: 10px;
-  border: 2px solid transparent; /* Adds space around thumb */
-  background-clip: padding-box;  /* Ensures border isn't clipped */
-}
-
-.grid-container::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Darker color on hover */
-}
-                                                                                                                      
-/* Smooth fade-in animation */
-.grid-container {
-  opacity: 0; /* Initially hidden */
-  animation: fadeIn 1.5s ease-in-out forwards; /* Fade-in effect */
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1; /* Final state: fully visible */
+  .view-all-overlay {
+    font-size: 1.2rem;
   }
 }
