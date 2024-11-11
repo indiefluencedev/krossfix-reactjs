@@ -78,14 +78,14 @@ const AboutUs = () => {
             About Us
           </h2>
           <p className="text-base sm:text-lg text-gray-700 mb-4 text-center md:text-left font-regular">
-            We are a technology-driven organization with a team of highly qualified and committed individuals.
+          Founded in 2018 and backed by the decades-long expertise of our parent company Vcube Chemicals, KrossFix Adhesives specializes in advanced, custom-made adhesive solutions for the footwear industry. Our in-house developed adhesives enhance durability and performance, tailored to meet precise industry needs. Committed to consistent quality, innovation, and reliable on-time delivery, we streamline manufacturing processes while addressing the unique demands of footwear manufacturers. Partner with KrossFix to elevate your products with specialized adhesive technologies designed for excellence.
           </p>
-          <p className="text-base sm:text-lg text-gray-700 mb-4 text-center md:text-left font-regular">
+          {/* <p className="text-base sm:text-lg text-gray-700 mb-4 text-center md:text-left font-regular">
             Each function is driven by competent and experienced staff to ensure effective implementation of the vision and mission of the organization in each of their areas of operations.
           </p>
           <p className="text-base sm:text-lg text-gray-700 text-center md:text-left font-regular">
             We are constantly developing our teams with the addition of industry veterans to accelerate the speed of development.
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Right Side - Image */}

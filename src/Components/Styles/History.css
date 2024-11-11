@@ -76,13 +76,13 @@
 
 .timeline-item.left .timeline-year {
   right: calc(100% - 500px);
-  margin-top: 265px;
+  margin-top: 338px;
   margin-right: -80px;
 }
 
 .timeline-item.right .timeline-year {
   left: calc(100% - 500px);
-  margin-top: -115px;
+  margin-top: -138px;
   margin-left: -80px;
 }
 

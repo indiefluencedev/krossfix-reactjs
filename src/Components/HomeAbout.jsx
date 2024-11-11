@@ -83,18 +83,21 @@ const HomeAbout = () => {
           variants={textVariants}
         >
           <h2 className="text-4xl text-[#403b68] font-bold mb-6">About Us</h2>
-          <p className="text-lg mb-4">
-            Super Bond Adhesives, a leading adhesive manufacturing company with a rich history spanning over{' '}
-            <span className='text-[#f97316] font-semibold'>four decades</span>.
+          <p className="text-[16px] text-[#202020] mb-4">
+            {/* Super Bond Adhesives, a leading adhesive manufacturing company with a rich history spanning over{' '}
+            <span className='text-[#f97316] font-semibold'>four decades</span>. */}
+            KrossFix Adhesives, backed by Vcube Chemicals, has been a trusted provider of advanced adhesive solutions for the footwear industry since 2018. We specialize in tailor-made adhesives that enhance durability and performance, developed in-house to meet precise industry needs. Supported by Vcube Chemicals' decades of expertise and our focus on reliable, on-time delivery, KrossFix ensures consistent quality and innovation. Our solutions are designed to streamline manufacturing processes while meeting the unique demands of the footwear sector.
+
+
           </p>
-          <p className="text-lg mb-4">
+          {/* <p className="text-lg mb-4">
             Since our establishment in <span className='text-[#f97316] font-semibold'>1974</span>, we have been dedicated to providing innovative adhesive solutions that
             cater to various industries and applications.
-          </p>
-          <p className="text-lg mb-4">
+          </p> */}
+          {/* <p className="text-lg mb-4">
             Our commitment to <span className='text-[#f97316] font-semibold'>excellence, customer satisfaction, and continuous improvement</span> has made us a trusted
             partner for businesses worldwide.
-          </p>
+          </p> */}
 
           {/* Vision and Mission Tabs in a Card Style */}
           <div className="p-5 rounded-lg shadow-lg border border-gray-100 bg-white h-[440px] md:h-[300px] lg:h-[350px]">
@@ -156,12 +159,8 @@ const HomeAbout = () => {
                 aria-hidden={activeTab !== 'vision'}
                 role="tabpanel"
               >
-                <p className="text-base md:text-[16px]">
-                  At Super Bond, our vision is to be the global leader in adhesive manufacturing, delivering superior
-                  quality products and unmatched service. We strive to empower our customers' success by providing
-                  them with reliable, innovative, and sustainable adhesive solutions. Through continuous research,
-                  development, and collaboration, we aim to anticipate and meet the evolving needs of our customers,
-                  ensuring their satisfaction and loyalty.
+                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[16px] md:text-[16px] text-[15px]">
+                Since launching in 2018, KrossFix has been dedicated to transforming India's footwear manufacturing with locally-made adhesives that meet global standards. Committed to quality and customer-centric solutions, we deliver personalized support to ensure efficient quality and smooth production process. With our commitment to quality and Vocal for Local drive, we are a 'Make In India' initiative, and we take great pride in our customer-centric philosophy.
                 </p>
               </div>
 
@@ -173,12 +172,8 @@ const HomeAbout = () => {
                 aria-hidden={activeTab !== 'mission'}
                 role="tabpanel"
               >
-                <p className="text-base md:text-[16px] lg:text-[14px]">
-                  Our mission is to develop, manufacture, and supply adhesive products of the highest quality, meeting
-                  and exceeding industry standards. We are dedicated to providing innovative solutions that enhance our
-                  customers' productivity, efficiency, and competitiveness. By investing in cutting-edge technology,
-                  fostering a culture of excellence, and nurturing a highly skilled team, we aim to deliver superior
-                  products and services that consistently surpass our customers' expectations.
+                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[16px] md:text-[16px] text-[15px]">
+                We aspire to become the foremost provider of innovative and sustainable adhesive solutions, revolutionizing the footwear industry with products that prioritize quality, performance, and environmental responsibility. Our vision is to empower manufacturers with advanced adhesives that enhance product durability and streamline processes while contributing to a greener, more sustainable future for the industry. At KrossFix, we are committed to driving progress and fostering partnerships that create lasting value.
                 </p>
               </div>
             </div>

@@ -50,30 +50,30 @@ const ProductSection = () => {
     {
       id: 1,
       name: 'Cleaner',
-      description: 'This is the description for Water based adhesive',
+      description: 'BTX-Free Cleaners for Strong Bonds',
       image: bottle1,
-      link: '/products/products1'
+      link: '/products/cleaner'
     },
     {
       id: 2,
       name: 'Adhesive',
-      description: 'This is the description for Solvent based adhesive',
+      description: 'Durable, safe, eco-friendly adhesives for all your footwear needs',
       image: bottle2,
-      link: '/products/products2'
+      link: '/products/adhesive'
     },
     {
       id: 3,
-      name: 'Primers',
-      description: 'This is the description for Thermoplastic hotmelt adhesive',
+      name: 'Primer',
+      description: 'Eco-friendly primers for dependable, long-lasting connections',
       image: bottle3,
-      link: '/products/products3' // Change to the actual product link later
+      link: '/products/primer' // Change to the actual product link later
     },
     {
       id: 4,
       name: 'Hardener',
-      description: 'This is the description for PU reactive hotmelt adhesive',
+      description: 'Boost adhesive strength and resilience with Krossfix hardeners',
       image: bottle4,
-      link: '/products/products4' // Change to the actual product link later
+      link: '/products/hardener' // Change to the actual product link later
     }
   ];
 

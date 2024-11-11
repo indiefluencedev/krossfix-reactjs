@@ -111,7 +111,7 @@ const MobileOurValues = () => {
 
         @media (min-width: 480px) {
           .para {
-            padding-top: 10px; /* Added margin-top to ensure the text is fully visible */
+            padding-top: 30px; /* Added margin-top to ensure the text is fully visible */
           }
         }
       `}</style>
