@@ -126,35 +126,71 @@
   .history-container {
     width: 90%;
     margin: 0 auto;
+    padding: 40px 0;
   }
-
-  .timeline-item.left .timeline-box,
-  .timeline-item.right .timeline-box {
-    margin-left: 0;
-    margin-right: 0;
-    width: 40%; /* Make text boxes narrower */
+  
+  .history-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #403b68;
+    margin-bottom: 40px;
   }
-
-  .timeline-box {
-    padding: 10px;
+  
+  
+  
+  .timeline {
+    position: relative;
+    padding: 0;
+    margin: 0;
   }
-
+  
+  .timeline-item {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-bottom: 60px;
+    opacity: 1; /* Make the item visible */
+  }
+  
   .timeline-item.left .timeline-box {
     text-align: left;
-    margin-right: 450px;
+    margin-right: 480px;
     position: relative;
-    /* padding-bottom: 40px;
-    padding-left: 20px; */
+    /* padding-top: 5px; */
+    padding-bottom: 30px;
+    padding-left: 20px;
   }
   
   .timeline-item.right .timeline-box {
     text-align: right;
-    margin-left: 450px;
+    margin-left: 480px;
     position: relative;
-    /* padding-bottom: 40px;
-    padding-right: 20px; */
+    padding-bottom: 30px;
+    padding-right: 20px;
   }
-
+  
+  .timeline-box {
+    background-color: rgb(226, 225, 225);
+    border-radius: 5px;
+    width: 400px; /* Standard width for 1440px */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+  }
+  
+  .timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #6c6c6c;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  
   .timeline-year {
     font-size: 24px;
     color: #f2980f;
@@ -162,17 +198,52 @@
     position: absolute;
     top: -30px;
   }
-
+  
   .timeline-item.left .timeline-year {
-    right: calc(100% - 400px);
-    margin-top: 265px;
-    margin-right: -10px;
+    right: calc(100% - 500px);
+    margin-top: 308px;
+    margin-right: 100px;
   }
   
   .timeline-item.right .timeline-year {
-    left: calc(100% - 400px);
-    margin-top: -113px;
-    margin-left: -10px;
+    left: calc(100% - 500px);
+    margin-top: -125px;
+    margin-left: 100px;
+  }
+  
+  .timeline-item.left .triangle-left {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 20px solid rgb(226, 225, 225);
+    transform: translateY(-50%);
+  }
+  
+  .timeline-item.right .triangle-right {
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid rgb(226, 225, 225);
+    transform: translateY(-50%);
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #000;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -220,224 +291,15 @@
 
   .timeline-item.left .timeline-year {
     right: calc(100% - 300px);
-    margin-top: 300px;
+    margin-top: 390px;
     margin-right: 5px;
   }
   
   .timeline-item.right .timeline-year {
     left: calc(100% - 300px);
-    margin-top: -125px;
+    margin-top: -155px;
     margin-left: 5px;
   }
 }
 
 /* Responsive design for 480px screens */
-@media (max-width: 480px) {
-  .history-container {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .timeline-item.left .timeline-box,
-  .timeline-item.right .timeline-box {
-    margin-left: 0;
-    margin-right: 0;
-    width: 50%; /* Make text boxes narrower */
-  }
-
-  .timeline-box {
-    padding: 20px;
-  }
-
-  .timeline-item.left .timeline-box {
-    text-align: left;
-    margin-right: 240px;
-    position: relative;
-  }
-  
-  .timeline-item.right .timeline-box {
-    text-align: right;
-    margin-left: 240px;
-    position: relative;
-  }
-
-  .timeline-year {
-    font-size: 24px;
-    color: #f2980f;
-    font-weight: bold;
-    position: absolute;
-    top: 50%; /* Vertically center */
-    transform: translateY(-50%);
-    width: 120px; /* Increase width to avoid wrapping */
-    text-align: center; /* Center the text */
-    white-space: nowrap; /* Prevent wrapping */
-  }
-
-  .timeline-item.left .timeline-year {
-    right: 50px; /* Adjust this value to align horizontally with the triangle */
-    top: -157px; /* Adjust this value to position vertically */
-    margin-right: -10px;
-  }
-  
-  .timeline-item.right .timeline-year {
-    left: 50px; /* Adjust this value to align horizontally with the triangle */
-    top: 263px; /* Adjust this value to position vertically */
-    margin-left: -10px;
-  }
-
-  .history-title {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-}
-
-
-@media (max-width: 320px) {
-  .history-container {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .para-right {
-    font-size: 12px;
-  }
-
-  .para-left {
-    font-size: 12px;
-  }
-  .timeline-item.left .timeline-box,
-  .timeline-item.right .timeline-box {
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 50%; /* Make text boxes narrower */
-  }
-
-  .timeline-box {
-    padding: 10px;
-  }
-
-  .timeline-item.left .timeline-box {
-    text-align: left;
-    margin-right: 240px;
-    position: relative;
-  }
-  
-  .timeline-item.right .timeline-box {
-    text-align: right;
-    margin-left: 240px;
-    position: relative;
-  }
-
-  .timeline-year {
-    font-size: 20px;
-    color: #f2980f;
-    font-weight: bold;
-    position: absolute;
-    top: 50%; /* Vertically center */
-    transform: translateY(-50%);
-    width: 120px; /* Increase width to avoid wrapping */
-    text-align: center; /* Center the text */
-    white-space: nowrap; /* Prevent wrapping */
-  }
-
-  .timeline-item.left .timeline-year {
-    right: 10px; /* Adjust this value to align horizontally with the triangle */
-    top: -157px; /* Adjust this value to position vertically */
-    margin-right: 10px;
-  }
-  
-  .timeline-item.right .timeline-year {
-    left: 10px; /* Adjust this value to align horizontally with the triangle */
-    top: 263px; /* Adjust this value to position vertically */
-    margin-left: 10px;
-  }
-
-  .history-title {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-}
-
-
-@media (max-width: 385px) {
-  .history-container {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .para-right {
-    font-size: 12px;
-  }
-
-  .para-left {
-    font-size: 12px;
-  }
-  .timeline-item.left .timeline-box,
-  .timeline-item.right .timeline-box {
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 50%; /* Make text boxes narrower */
-  }
-
-  .timeline-box {
-    padding: 10px;
-  }
-
-  .timeline-item.left .timeline-box {
-    text-align: left;
-    margin-right: 240px;
-    position: relative;
-  }
-  
-  .timeline-item.right .timeline-box {
-    text-align: right;
-    margin-left: 240px;
-    position: relative;
-  }
-
-  .timeline-year {
-    font-size: 24px;
-    color: #f2980f;
-    font-weight: bold;
-    position: absolute;
-    top: 50%; /* Vertically center */
-    transform: translateY(-50%);
-    width: 120px; /* Increase width to avoid wrapping */
-    text-align: center; /* Center the text */
-    white-space: nowrap; /* Prevent wrapping */
-  }
-
-  .timeline-item.left .timeline-year {
-    right: 10px; /* Adjust this value to align horizontally with the triangle */
-    top: -117px; /* Adjust this value to position vertically */
-    margin-right: 10px;
-  }
-  
-  .timeline-item.right .timeline-year {
-    left: 10px; /* Adjust this value to align horizontally with the triangle */
-    top: 309px; /* Adjust this value to position vertically */
-    margin-left: 10px;
-  }
-
-  /*  */
-
-  .timeline-item .left{
-    right: 10px; /* Adjust this value to align horizontally with the triangle */
-    top: -100px; /* Adjust this value to position vertically */
-    margin-right: -10px;
-    margin-top: 20px;
-  }
-
-  .history-title {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-}
-
-

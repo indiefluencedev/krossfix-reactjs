@@ -11,17 +11,17 @@ const OurValues = () => {
     {
       icon: <FaLightbulb size={50} />,
       description:
-        ' At KrossFix, innovation is at the core of everything we do. We believe in delivering top-notch adhesive solutions that not only meet industry standards but also advance environmental care. Our mission is to simplify processes for our customers through tailored support that boosts efficiency and fosters innovation. Proudly part of the Make in India movement, we champion local manufacturing with our Vocal for Local approach, offering world-class, innovative adhesives made right here in India. With integrity, reliability, and strong partnerships, we aim to create lasting value and build a more sustainable, self-reliant future driven by innovation.',
+        ' At KrossFix, innovation is at the core of everything we do. We believe in delivering top-notch adhesive solutions that not only meet industry standards but also advance environmental care. Our mission is to simplify processes for our customers through tailored support that boosts efficiency and fosters innovation. We are proud to be part of the Make in India movement, championing local manufacturing with our Vocal for Local approach. We offer world-class, innovative adhesives made right here in India. With integrity, reliability, and strong partnerships, we aim to create lasting value and build a more sustainable, self-reliant future driven by innovation.',
     },
     {
       icon: <FaUsers size={50} />,
       description:
-        ' Teamwork is the cornerstone of our success and by uniting the efforts of our customers, partners, and a dedicated team, we deliver superior quality adhesives that surpass industry standards and complement the environmental concerns as well. Our collaborative spirit simplifies workflows for clients, providing personalized support that enhances efficiency. ',
+        '  Teamwork is the cornerstone of our success. By uniting the efforts of our customers, partners, and a dedicated team, we deliver superior quality adhesives that surpass industry standards and address environmental concerns. Our collaborative spirit simplifies workflows for clients, offering personalized support to enhance efficiency and drive innovation. Together, we strive to create sustainable solutions that not only meet present needs but also shape a better future for the industry. With a shared vision and unwavering commitment, we continually push boundaries to achieve excellence in every endeavor. ',
     },
     {
       icon: <FaClipboardCheck size={50} />,
       description:
-        'At KrossFix, accountability is a virtue upheld in the highest regards while delivering quality and integrity, ensuring transparency in every aspect of our business. By consistently delivering on our promises and prioritizing customer satisfaction, we build trust and foster long-term partnerships. Our rigorous quality controls and ethical practices.',
+        ' At KrossFix, accountability is at the heart of everything we do, upheld with the highest regard as we deliver quality and integrity. Ensuring transparency in every aspect of our business, we consistently fulfill promises, prioritize customer satisfaction, and build lasting trust. Our strict quality controls and ethical practices reflect our commitment to responsibility, reliability, and excellence in every adhesive solution we provide. Through these values, we aim to strengthen long-term partnerships and drive meaningful impact across the industry, contributing to a more sustainable and innovative future.',
     },
   ];
 

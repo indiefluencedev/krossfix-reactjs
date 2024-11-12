@@ -28,7 +28,7 @@ const Herosection = () => {
           >
             <div className="absolute inset-0 bg-black bg-opacity-30"></div>
             <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-white px-4 md:px-16 lg:px-20"> {/* Adjust text alignment and padding */}
-              <h2 className="text-3xl sm:text-3xl md:text-4xl mt-10 font-bold mb-4 text-center md:text-left"> {/* Change text alignment */}
+              <h2 className="text-2xl sm:text-3xl md:text-3xl mt-10 font-bold mb-4 text-center md:text-left"> {/* Change text alignment */}
               Start adhesion right with KrossFix cleaners for pristine surfaces
 
               </h2>

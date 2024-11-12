@@ -30,7 +30,7 @@ const History = () => {
 
         {/* Third Event */}
         <div className="timeline-item left">
-          <div className="timeline-year">2002</div>
+          <div className="timeline-year">2023</div>
           <div className="timeline-dot"></div>
           <div className="timeline-box">
             <div className="triangle-left"></div> {/* Triangle added */}
@@ -41,7 +41,7 @@ const History = () => {
 
         {/* Fourth Event */}
         <div className="timeline-item right">
-          <div className="timeline-year">2010</div>
+          <div className="timeline-year">2020</div>
           <div className="timeline-dot"></div>
           <div className="timeline-box">
             <div className="triangle-right"></div> {/* Triangle added */}

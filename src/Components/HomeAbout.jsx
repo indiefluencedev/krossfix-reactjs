@@ -82,11 +82,11 @@ const HomeAbout = () => {
           animate={isTextVisible ? 'visible' : 'hidden'}
           variants={textVariants}
         >
-          <h2 className="text-4xl text-[#403b68] font-bold mb-6">About Us</h2>
-          <p className="text-[16px] text-[#202020] mb-4">
+          <h2 className="md:text-4xl text-[30px] text-[#403b68] font-bold mb-6">About Us</h2>
+          <p className="md:text-[16px] text-[14px] text-[#202020] mb-4">
             {/* Super Bond Adhesives, a leading adhesive manufacturing company with a rich history spanning over{' '}
             <span className='text-[#f97316] font-semibold'>four decades</span>. */}
-            KrossFix Adhesives, backed by Vcube Chemicals, has been a trusted provider of advanced adhesive solutions for the footwear industry since 2018. We specialize in tailor-made adhesives that enhance durability and performance, developed in-house to meet precise industry needs. Supported by Vcube Chemicals' decades of expertise and our focus on reliable, on-time delivery, KrossFix ensures consistent quality and innovation. Our solutions are designed to streamline manufacturing processes while meeting the unique demands of the footwear sector.
+            KrossFix Adhesives, backed by Vcube Chemicals, has been a trusted provider of advanced adhesive solutions for the footwear industry since 2018. We specialize in tailor-made adhesives that enhance durability and performance, developed in-house to meet precise industry needs. Supported by Vcube Chemicals&apos; decades of expertise and our focus on reliable, on-time delivery, KrossFix ensures consistent quality and innovation. Our solutions are designed to streamline manufacturing processes while meeting the unique demands of the footwear sector.
 
 
           </p>
@@ -117,7 +117,7 @@ const HomeAbout = () => {
                   }`}
                 />
                 <h3
-                  className={`text-sm md:text-lg ml-4 font-semibold ${
+                  className={`text-[12px] md:text-[17px] ml-4 xl:text-[17px]  font-semibold ${
                     activeTab === 'vision' ? 'text-orange-500' : 'text-[#312b6a]'
                   }`}
                 >
@@ -140,7 +140,7 @@ const HomeAbout = () => {
                   }`}
                 />
                 <h3
-                  className={`text-sm md:text-lg ml-4 font-semibold ${
+                  className={`text-[12px] md:text-[17px] xl:text-[17px] ml-4 font-semibold ${
                     activeTab === 'mission' ? 'text-orange-500' : 'text-[#312b6a]'
                   }`}
                 >
@@ -159,8 +159,8 @@ const HomeAbout = () => {
                 aria-hidden={activeTab !== 'vision'}
                 role="tabpanel"
               >
-                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[16px] md:text-[16px] text-[15px]">
-                Since launching in 2018, KrossFix has been dedicated to transforming India's footwear manufacturing with locally-made adhesives that meet global standards. Committed to quality and customer-centric solutions, we deliver personalized support to ensure efficient quality and smooth production process. With our commitment to quality and Vocal for Local drive, we are a 'Make In India' initiative, and we take great pride in our customer-centric philosophy.
+                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[15px] md:text-[16px] text-[13px] font-medium">
+                Since launching in 2018, KrossFix has been dedicated to transforming India's footwear manufacturing with locally-made adhesives that meet global standards. Committed to quality and customer-centric solutions, we deliver personalized support to ensure efficient quality and smooth production process. With our commitment to quality and Vocal for Local drive, we are a 'Make In India' initiative, and we take great pride in our customer-centric philosophy. 
                 </p>
               </div>
 
@@ -172,7 +172,7 @@ const HomeAbout = () => {
                 aria-hidden={activeTab !== 'mission'}
                 role="tabpanel"
               >
-                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[16px] md:text-[16px] text-[15px]">
+                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[15px] md:text-[16px] text-[13px] font-medium">
                 We aspire to become the foremost provider of innovative and sustainable adhesive solutions, revolutionizing the footwear industry with products that prioritize quality, performance, and environmental responsibility. Our vision is to empower manufacturers with advanced adhesives that enhance product durability and streamline processes while contributing to a greener, more sustainable future for the industry. At KrossFix, we are committed to driving progress and fostering partnerships that create lasting value.
                 </p>
               </div>

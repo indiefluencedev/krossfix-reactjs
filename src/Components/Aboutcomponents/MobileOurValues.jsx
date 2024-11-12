@@ -89,7 +89,7 @@ const MobileOurValues = () => {
           className="flex justify-center items-center p-8 bg-gradient-to-r from-[#241F52] to-[#2F2568] text-white rounded-lg transition-all duration-500 ease-in-out shadow-lg custom-scrollbar"
           style={{ height: '300px', width: '100%', overflowY: 'auto' }}
         >
-          <p className="para text-sm text-center mt-2">
+          <p className="para text-[13px] text-center mt-2">
             {values[activeIndex].description}
           </p>
         </div>
@@ -111,7 +111,7 @@ const MobileOurValues = () => {
 
         @media (min-width: 480px) {
           .para {
-            padding-top: 30px; /* Added margin-top to ensure the text is fully visible */
+            padding-top: 40px; /* Added margin-top to ensure the text is fully visible */
           }
         }
       `}</style>
