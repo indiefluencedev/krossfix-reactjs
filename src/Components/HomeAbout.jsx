@@ -117,7 +117,7 @@ const HomeAbout = () => {
                   }`}
                 />
                 <h3
-                  className={`text-[12px] md:text-[17px] ml-4 xl:text-[17px]  font-semibold ${
+                  className={`text-[13px] md:text-[17px] ml-4 xl:text-[17px]  font-semibold ${
                     activeTab === 'vision' ? 'text-orange-500' : 'text-[#312b6a]'
                   }`}
                 >
@@ -140,7 +140,7 @@ const HomeAbout = () => {
                   }`}
                 />
                 <h3
-                  className={`text-[12px] md:text-[17px] xl:text-[17px] ml-4 font-semibold ${
+                  className={`text-[13px] md:text-[17px] xl:text-[17px] ml-4 font-semibold ${
                     activeTab === 'mission' ? 'text-orange-500' : 'text-[#312b6a]'
                   }`}
                 >
@@ -159,7 +159,7 @@ const HomeAbout = () => {
                 aria-hidden={activeTab !== 'vision'}
                 role="tabpanel"
               >
-                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[15px] md:text-[16px] text-[13px] font-medium">
+                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[15px] md:text-[16px] text-[13px] md:font-medium">
                 Since launching in 2018, KrossFix has been dedicated to transforming India's footwear manufacturing with locally-made adhesives that meet global standards. Committed to quality and customer-centric solutions, we deliver personalized support to ensure efficient quality and smooth production process. With our commitment to quality and Vocal for Local drive, we are a 'Make In India' initiative, and we take great pride in our customer-centric philosophy. 
                 </p>
               </div>
@@ -172,7 +172,7 @@ const HomeAbout = () => {
                 aria-hidden={activeTab !== 'mission'}
                 role="tabpanel"
               >
-                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[15px] md:text-[16px] text-[13px] font-medium">
+                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[15px] md:text-[16px] text-[13px] md:font-medium">
                 We aspire to become the foremost provider of innovative and sustainable adhesive solutions, revolutionizing the footwear industry with products that prioritize quality, performance, and environmental responsibility. Our vision is to empower manufacturers with advanced adhesives that enhance product durability and streamline processes while contributing to a greener, more sustainable future for the industry. At KrossFix, we are committed to driving progress and fostering partnerships that create lasting value.
                 </p>
               </div>

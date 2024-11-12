@@ -212,7 +212,7 @@ const Navbar = () => {
 
             <Link
               to="/contact"
-              className="text-black hover:text-orange-500 py-2 text-lg w-full border-b border-gray-300"
+              className="text-black font-medium hover:text-orange-500 py-2 text-lg w-full border-b border-gray-300"
               onClick={handleMenuToggle}
             >
               Contact Us
