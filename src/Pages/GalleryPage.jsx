@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import '../Components/Styles/GalleryPage.css';
+
+// Import images
 import image1 from '../assets/galleryimages/bag.jpg'; 
 import image2 from '../assets/galleryimages/basket.jpg';
 import image3 from '../assets/galleryimages/colorshoe.jpg';
@@ -13,12 +16,17 @@ import image10 from '../assets/galleryimages/watch.jpg';
 import image11 from '../assets/galleryimages/bag2.jpg';
 import image12 from '../assets/galleryimages/whitecream.jpg';
 import image13 from '../assets/galleryimages/colorshoe.jpg';
-import '../Components/Styles/GalleryPage.css';
 
 const GalleryPage = () => {
-  const [isInView, setIsInView] = useState(true); // Temporarily set to true to bypass observer
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
-  const GalleryPageRef = useRef(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [
+    image1, image2, image3, image4, image5,
+    image6, image7, image8, image9, image10,
+    image11, image12, image13,
+  ];
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,35 +37,68 @@ const GalleryPage = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  
-
   const GalleryPageContainer = isDesktop ? motion.div : 'div';
 
+  const openModal = (index) => {
+    setCurrentImageIndex(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const showNextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const showPrevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
   return (
-    <GalleryPageContainer
-      ref={GalleryPageRef}
-    //   initial={isDesktop ? 'hidden' : undefined}
-    //   animate={isInView && isDesktop ? 'visible' : undefined}
-    //   variants={isDesktop ? containerVariants : undefined}
-      className="GalleryPage-container mx-auto"
-    >
-      <h2 className="pt-28"></h2>
-      <div className="grid-container1">
-        <div className="grid-item1 item1"><img src={image1} alt="Bag" /></div>
-        <div className="grid-item1 item2"><img src={image2} alt="Basket" /></div>
-        <div className="grid-item1 item3"><img src={image3} alt="Colorful Shoe" /></div>
-        <div className="grid-item1 item4"><img src={image4} alt="Cream" /></div>
-        <div className="grid-item1 item5"><img src={image5} alt="Game" /></div>
-        <div className="grid-item1 item6"><img src={image6} alt="Leather Bag" /></div>
-        <div className="grid-item1 item7"><img src={image7} alt="Light" /></div>
-        <div className="grid-item1 item8"><img src={image8} alt="Medicine" /></div>
-        <div className="grid-item1 item9"><img src={image9} alt="Shoes" /></div>
-        <div className="grid-item1 item10"><img src={image10} alt="Watch" /></div>
-        <div className="grid-item1 item11"><img src={image11} alt="Bag 2" /></div>
-        <div className="grid-item1 item12"><img src={image12} alt="White Cream" /></div>
-        <div className="grid-item1 item13"><img src={image13} alt="Colorful shoe" /></div>
-      </div>
-    </GalleryPageContainer>
+    <>
+      {/* Main Gallery Page */}
+      <GalleryPageContainer className="GalleryPage-container mx-auto">
+        <h2 className="pt-28 pb-5 mx-auto text-4xl font-semibold text-center">Gallery</h2>
+        <div className="grid-container1">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`grid-item1 item${index + 1}`}
+              onClick={() => openModal(index)}
+            >
+              <img src={image} alt={`Gallery Item ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+      </GalleryPageContainer>
+
+      {/* Modal for Full-View Image */}
+      {modalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          {/* Close Button */}
+          <button className="close-button" onClick={closeModal}>
+            ×
+          </button>
+
+          {/* Modal Content */}
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="prev-button" onClick={showPrevImage}>
+              ‹
+            </button>
+            <img
+              src={images[currentImageIndex]}
+              alt={`Full View ${currentImageIndex + 1}`}
+              className="modal-image"
+            />
+            <button className="next-button" onClick={showNextImage}>
+              ›
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

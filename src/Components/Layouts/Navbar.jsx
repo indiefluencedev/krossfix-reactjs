@@ -158,6 +158,14 @@ const Navbar = () => {
               About
             </Link>
 
+            <Link
+              to="/gallery"
+              className={`py-2 text-lg w-full border-b border-gray-300 font-medium ${isActive('/gallery') ? 'text-orange-500' : 'text-black hover:text-orange-500'}`}
+              onClick={handleMenuToggle}
+            >
+              Gallery
+            </Link>
+
             {/* Products Dropdown (Mobile) */}
             <div className="py-2 w-full">
               <div
