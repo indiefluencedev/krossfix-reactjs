@@ -100,7 +100,7 @@ const HomeAbout = () => {
           </p> */}
 
           {/* Vision and Mission Tabs in a Card Style */}
-          <div className="p-5 rounded-lg shadow-lg border border-gray-100 bg-white h-[440px] md:h-[300px] lg:h-[350px]">
+          <div className="p-5 rounded-lg shadow-lg border border-gray-100 bg-white h-[455px] md:h-[300px] lg:h-[350px]">
             <div className="flex flex-row justify-start gap-3 md:gap-8 py-3">
               {/* Vision Tab */}
               <div
@@ -159,7 +159,7 @@ const HomeAbout = () => {
                 aria-hidden={activeTab !== 'vision'}
                 role="tabpanel"
               >
-                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[15px] md:text-[16px] text-[13px] md:font-medium">
+                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[15px] md:text-[16px] text-[12px] md:font-medium">
                 Since launching in 2018, KrossFix has been dedicated to transforming India's footwear manufacturing with locally-made adhesives that meet global standards. Committed to quality and customer-centric solutions, we deliver personalized support to ensure efficient quality and smooth production process. With our commitment to quality and Vocal for Local drive, we are a 'Make In India' initiative, and we take great pride in our customer-centric philosophy. 
                 </p>
               </div>
@@ -172,7 +172,7 @@ const HomeAbout = () => {
                 aria-hidden={activeTab !== 'mission'}
                 role="tabpanel"
               >
-                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[15px] md:text-[16px] text-[13px] md:font-medium">
+                <p className="text-base text-[#202020] lg:text-[14px] xl:text-[15px] md:text-[16px] text-[12px] md:font-medium">
                 We aspire to become the foremost provider of innovative and sustainable adhesive solutions, revolutionizing the footwear industry with products that prioritize quality, performance, and environmental responsibility. Our vision is to empower manufacturers with advanced adhesives that enhance product durability and streamline processes while contributing to a greener, more sustainable future for the industry. At KrossFix, we are committed to driving progress and fostering partnerships that create lasting value.
                 </p>
               </div>
