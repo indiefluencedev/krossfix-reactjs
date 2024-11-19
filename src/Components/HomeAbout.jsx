@@ -82,7 +82,7 @@ const HomeAbout = () => {
           animate={isTextVisible ? 'visible' : 'hidden'}
           variants={textVariants}
         >
-          <h2 className="md:text-4xl text-[30px] text-[#403b68] font-bold mb-6">About Us</h2>
+          <h2 className="md:text-4xl text-[30px] text-[#403b68] font-bold mb-6">About us</h2>
           <p className="md:text-[16px] text-[14px] text-[#202020] mb-4">
             {/* Super Bond Adhesives, a leading adhesive manufacturing company with a rich history spanning over{' '}
             <span className='text-[#f97316] font-semibold'>four decades</span>. */}
